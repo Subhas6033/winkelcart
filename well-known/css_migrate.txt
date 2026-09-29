@@ -1,0 +1,1748 @@
+///// customer create
+
+<style>
+  .col-lg-1 {
+    text-align: center;
+    padding: 0px 0px;
+  }
+
+  .addField input,
+  .addField div,
+  .addField select {
+    font-size: 12px;
+  }
+
+  .addField input,
+  .addField select {
+    padding: 5px 2px;
+    height: auto;
+  }
+
+  .container_fluid {
+    padding-right: 0 !important;
+    padding-left: 30px !important;
+  }
+
+  .dNone {
+    position: inherit !important;
+  }
+
+  @media  only screen and (max-width:1350px) {
+    .addCustomerFields {
+      overflow-x: scroll;
+    }
+
+    .fieldContainer {
+      width: 1100px;
+    }
+  }
+</style>
+ <div class="col-12">
+                  <label class="form-control-label" style="font-size: 22px;">Asset Details with plan</label>
+                </div>
+                <hr>
+                <input type="hidden" id="asset_count" value="1">
+                <div class="col-12 addCustomerFields" style="padding-bottom: 100px;" id="asset_html">
+                  <input type="hidden" id="deleted_id" name="deleted_id" value="">
+                                                      <div class="d-flex align-items-end fieldContainer">
+                    <div style="width: 70px; margin-right: 5px;" class="addField">
+                      <input type="hidden" name="asset_id[]" id="asset_id1" value="">
+                      <div class="fw-semibold">Item</div>
+                      <div>
+                        <select class="form-control thickness_of_film mendatory loop_class border_error" name="asset_item[]" id="asset_item1" data-fieldid="1" required>
+                          <option value='2'>Canon E4562</option><option value='6'>hjkhk</option><option value='5'>terw</option><option value='1'>test</option><option value='7'>test item</option><option value='4'>tyutyut</option><option value='3'>uyiuiyiu</option>                        </select>
+                      </div>
+                    </div>
+                    <div style=" margin-right: 5px; width: 75px;" class="addField">
+                      <div class="fw-semibold">Model</div>
+                      <div class=""><input type="text" name="asset_model[]" id="asset_model1" class="form-control border_error" placeholder="Model"></div>
+                    </div>
+                    <div style="width: 75px; margin-right: 5px;" class="addField">
+                      <div class="fw-semibold">Sl</div>
+                      <div class=""><input type="text" name="asset_sl[]" id="asset_sl1" class="form-control border_error" placeholder="Sl no"></div>
+                    </div>
+                    <div style="margin-right: 5px;" class="addField">
+                      <div class="fw-semibold">Plan</div>
+                      <div class="">
+                        <select class="form-control thickness_of_film mendatory border_error" name="asset_plan[]" id="asset_plan1" required>
+                          <option value="1" selected>Rental</option>
+                          <option value="2">Monthly</option>
+                          <option value="3">Maintainence</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div style="width: 120px; margin-right: 5px;" class="addField">
+                      <div class="fw-semibold">No. of Pages</div>
+                      <div class=""><input type="text" name="asset_no_page[]" id="asset_no_page1" class="form-control border_error" placeholder="No of Pages" oninput="this.value = this.value.replace(/[^0-9]/g, '');this.value = this.value.replace(/(\..*)\./g, '$1');"></div>
+                    </div>
+                    <div style="width: 100px; margin-right: 5px;" class="addField">
+                      <div class="fw-semibold">@Pages</div>
+                      <div class=""><input type="text" name="asset_pages_price[]" id="asset_pages_price1" class="form-control border_error" placeholder="Rs." oninput="this.value = this.value.replace(/[^0-9.]/g, '');this.value = this.value.replace(/(\..*)\./g, '$1');"></div>
+                    </div>
+                    <div style="width: 100px; margin-right: 5px;" class="addField">
+                      <div class="fw-semibold">Free Pages</div>
+                      <div class=""><input type="text" name="asset_free_page[]" id="asset_free_page1" class="form-control border_error" placeholder="No of pages" oninput="this.value = this.value.replace(/[^0-9]/g, '');this.value = this.value.replace(/(\..*)\./g, '$1');"></div>
+                    </div>
+                    <div style="width: 100px; margin-right: 5px;" class="addField">
+                      <div class="fw-semibold">@Rental</div>
+                      <div class=""><input type="text" name="asset_rental[]" id="asset_rental1" class="form-control border_error" placeholder="Rs." oninput="this.value = this.value.replace(/[^0-9.]/g, '');this.value = this.value.replace(/(\..*)\./g, '$1');"></div>
+                    </div>
+                    <div style="margin-right: 5px;  width: 95px;" class="addField">
+                      <div class="fw-semibold"> Start date</div>
+                      <div class=""><input type="text" name="asset_start_date[]" id="asset_start_date1" class="form-control calender border_error" placeholder="Stert Date"></div>
+                    </div>
+                    <div style="margin-right: 5px;  width: 95px;" class="addField">
+                      <div class="fw-semibold"> End date</div>
+                      <div class=""><input type="text" name="asset_end_date[]" id="asset_end_date1" class="form-control calender border_error" placeholder="End Date"></div>
+                    </div>
+                    <div style="margin-right: 5px;" class="addField">
+                      <div class="fw-semibold">Status</div>
+                      <div class="">
+                        <select class="form-control thickness_of_film mendatory border_error" name="asset_status[]" id="asset_status1" required>
+                          <option value="0" selected>Active</option>
+                          <option value="1">Inactive</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="fw-semibold"></div>
+                      <div class=""><button type="button" style="width: 70px;" class="btn btn-sm btn-success" id="add_more_asset">Add</button></div>
+                    </div>
+                  </div>
+                                  </div>
+
+              </div>
+              <div class="text-right">
+                <button class="btn btn-sm btn-warning">Print</button>
+              </div>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary my-4">Save</button>
+              <a href="" class="btn btn-outline-danger my-4">Cancel</a>
+            </div>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+$("#add_more_asset").click(function() {
+      var asset_count = $("#asset_count").val();
+      asset_count++;
+      var item_list_html = "<option value='2'>Canon E4562</option><option value='6'>hjkhk</option><option value='5'>terw</option><option value='1'>test</option><option value='7'>test item</option><option value='4'>tyutyut</option><option value='3'>uyiuiyiu</option>";
+      var html = '<div class="d-flex align-items-end mt-1" >' +
+        '<div style="width: 70px; margin-right: 5px;" class="addField">' +
+        '<input type="hidden" name="asset_id[]" id="asset_id' + asset_count + '" value="">' +
+        '<div>' +
+        '<select class="form-control thickness_of_film mendatory loop_class border_error" name="asset_item[]" data-fieldid="' + asset_count + '" id="asset_item' + asset_count + '" required>' +
+        item_list_html +
+        '</select>' +
+        '</div>' +
+        '</div>' +
+        '<div style=" margin-right: 5px; width: 75px;" class="addField">' +
+        '<div class=""><input type="text" name="asset_model[]" id="asset_model' + asset_count + '" class="form-control border_error" placeholder="Model"></div>' +
+        '</div>' +
+        '<div style="width: 75px; margin-right: 5px;" class="addField">' +
+        '<div class=""><input type="text" name="asset_sl[]" id="asset_sl' + asset_count + '" class="form-control border_error" placeholder="Sl no"></div>' +
+        '</div>' +
+        '<div style="margin-right: 5px;" class="addField">' +
+        '<div class="">' +
+        '<select class="form-control thickness_of_film mendatory border_error" name="asset_plan[]" id="asset_plan' + asset_count + '" required>' +
+        '<option value="1" selected>Rental</option>' +
+        '<option value="2">Monthly</option>' +
+        '<option value="3">Maintainence</option>' +
+        '</select>' +
+        '</div>' +
+        '</div>' +
+        '<div style="width: 120px; margin-right: 5px;" class="addField">' +
+        '<div class=""><input type="text" name="asset_no_page[]" id="asset_no_page' + asset_count + '" class="form-control border_error" placeholder="No of Pages" oninput="this.value = this.value.replace(/[^0-9]/g, "");this.value = this.value.replace(/(\..*)\./g, \'$1\');"></div>' +
+        '</div>' +
+        '<div style="width: 100px; margin-right: 5px;" class="addField">' +
+        '<div class=""><input type="text" name="asset_pages_price[]" id="asset_pages_price' + asset_count + '" class="form-control border_error" placeholder="Rs." oninput="this.value = this.value.replace(/[^0-9.]/g, "");this.value = this.value.replace(/(\..*)\./g, \'$1\');"></div>' +
+        '</div>' +
+        '<div style="width: 100px; margin-right: 5px;" class="addField">' +
+        '<div class=""><input type="text" name="asset_free_page[]" id="asset_free_page' + asset_count + '" class="form-control border_error" placeholder="No of pages" oninput="this.value = this.value.replace(/[^0-9]/g, "");this.value = this.value.replace(/(\..*)\./g, \'$1\');"></div>' +
+        '</div>' +
+        '<div style="width: 100px; margin-right: 5px;" class="addField">' +
+        '<div class=""><input type="text" name="asset_rental[]" id="asset_rental' + asset_count + '" class="form-control border_error" placeholder="Rs." oninput="this.value = this.value.replace(/[^0-9.]/g, "");this.value = this.value.replace(/(\..*)\./g, \'$1\');"></div>' +
+        '</div>' +
+        '<div style="margin-right: 5px; width: 95px;" class="addField">' +
+        '<div class=""><input type="text" name="asset_start_date[]" id="asset_start_date' + asset_count + '" class="form-control calender border_error" placeholder="Stert Date"></div>' +
+        '</div>' +
+        '<div style="margin-right: 5px; width: 95px;" class="addField">' +
+        '<div class=""><input type="text" name="asset_end_date[]" id="asset_end_date' + asset_count + '" class="form-control calender border_error" placeholder="End Date"></div>' +
+        '</div>' +
+        '<div style="margin-right: 5px; " class="addField">' +
+        '<div class="">' +
+        '<select class="form-control thickness_of_film mendatory border_error" name="asset_status[]" id="asset_status' + asset_count + '" required>' +
+        '<option value="0" selected>Active</option>' +
+        '<option value="1">Inactive</option>' +
+        '</select>' +
+        '</div>' +
+        '</div>' +
+        '<div>' +
+        '<div class="fw-semibold"></div>' +
+        '<div class=""><button type="button" style="width: 70px;" data-fieldid="' + asset_count + '" class="btn btn-sm btn-danger remove_more_asset" >Remove</button></div>' +
+        '</div>' +
+        '</div>';
+      $("#asset_html").append(html);
+      $("#asset_count").val(asset_count);
+      $(".calender").datepicker({
+        dateFormat: "dd-mm-yy",
+        //altFormat: "ddmmyy",
+        //altField: "#alt-date",
+        changeMonth: true,
+        changeYear: true,
+        minDate: '0',
+        //minDate: new Date(2022, 1 - 1, 1),
+        //maxDate: "+1m +1w",
+        //setDate: "10-8-2022",
+        gotoCurrent: true
+      });
+    });
+
+///// customer create
+
+/////// customer index listing page
+
+
+<div class="col text-right">
+              <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main" method="GET">
+                <div class="form-group mb-0">
+                  <div class="input-group input-group-alternative input-group-merge">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-search"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Search" id="search" name="search" type="text" value="" spellcheck="false" data-ms-editor="true">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" style="cursor: pointer;"><i class="fas fa-times"></i></span>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </form>
+            </div>
+
+    /////// customer index listing page
+
+
+/////// purchase invoice create
+.col-lg-1 {
+    text-align: center;
+    padding: 0px 0px;
+  }
+
+/////// purchase invoice create
+<input type="hidden" id="asset_count" value="1">
+                <div class="" style="padding-bottom: 100px;" id="asset_html">
+                  <input type="hidden" id="deleted_id" name="deleted_id" value="">
+                                                      <div class="d-flex align-items-end mt-1" style="width: ;">
+                    <div style="margin-right: 5px;">
+                      <input type="hidden" name="asset_id[]" id="asset_id1" value="">
+                      <div class="fw-semibold">Item Code</div>
+                      <div class=""><input type="text" name="item_code[]" id="item_code1" class="form-control border_error loop_class" data-fieldid="1" value="" placeholder="Item Code"></div>
+                    </div>
+                    <div style="margin-right: 5px;">
+                      <div class="fw-semibold">Item Name</div>
+                      <div class=""><input type="text" name="item_name[]" id="item_name1" class="form-control border_error" value="" placeholder="Name"></div>
+                    </div>
+                    <div style="margin-right: 5px;">
+                      <div class="fw-semibold">UMO</div>
+                      <div class=""><input type="text" name="umo[]" id="umo1" class="form-control border_error" value="" placeholder="UMO"></div>
+                    </div>
+                    <div style="width: 100px; margin-right: 5px;">
+                      <div class="fw-semibold">Quantity</div>
+                      <div class=""><input type="text" name="quantity[]" id="quantity1" class="form-control border_error" value="" placeholder="Quantity" oninput="this.value = this.value.replace(/[^0-9]/g, '');this.value = this.value.replace(/(\..*)\./g, '$1');"></div>
+                    </div>
+                    <div style="width: 120px; margin-right: 5px;">
+                      <div class="fw-semibold">Rate</div>
+                      <div class=""><input type="text" name="rate[]" id="rate1" value="" class="form-control border_error" placeholder="Rs." oninput="this.value = this.value.replace(/[^0-9.]/g, '');this.value = this.value.replace(/(\..*)\./g, '$1');"></div>
+                    </div>
+                    <div style="width: 130px; margin-right: 5px;">
+                      <div class="fw-semibold">Total Amount</div>
+                      <div class=""><input type="text" name="total_amount[]" id="total_amount1" value="" class="form-control border_error" placeholder="Rs." oninput="this.value = this.value.replace(/[^0-9.]/g, '');this.value = this.value.replace(/(\..*)\./g, '$1');"></div>
+                    </div>
+                    <div>
+                      <div class="fw-semibold"></div>
+                      <div class=""><button type="button" class="btn btn-success" id="add_more_asset">Add</button></div>
+                    </div>
+                  </div>
+                                  </div>
+              </div>
+            </div>
+
+$("#add_more_asset").click(function() {
+      var asset_count = $("#asset_count").val();
+      asset_count++;
+      var html = '<div class="d-flex align-items-end mt-1" style="width: ;">'
+        +'<div style="margin-right: 5px;">'
+        +'<input type="hidden" name="asset_id[]" id="asset_id' + asset_count + '" value="">'
+        +'<div class=""><input type="text" name="item_code[]" id="item_code' + asset_count + '" class="form-control border_error loop_class" data-fieldid="' + asset_count + '" value="" placeholder="Item Code"></div>'
+        +'</div>'
+        +'<div style="margin-right: 5px;">'
+        +'<div class=""><input type="text" name="item_name[]" id="item_name' + asset_count + '" class="form-control border_error" value="" placeholder="Name"></div>'
+        +'</div>'
+        +'<div style="margin-right: 5px;">'
+        +'<div class=""><input type="text" name="umo[]" id="umo' + asset_count + '" class="form-control border_error" value="" placeholder="UMO"></div>'
+        +'</div>'
+        +'<div style="width: 100px; margin-right: 5px;">'
+        +'<div class=""><input type="text" name="quantity[]" id="quantity' + asset_count + '" class="form-control border_error" value="" placeholder="Quantity"  oninput="this.value = this.value.replace(/[^0-9.]/g, "");this.value = this.value.replace(/(\..*)\./g, \'$1\');"></div>'
+        +'</div>'
+        +'<div style="width: 120px; margin-right: 5px;">'
+        +'<div class=""><input type="text" name="rate[]" id="rate' + asset_count + '" value="" class="form-control border_error" placeholder="Rs."  oninput="this.value = this.value.replace(/[^0-9.]/g, "");this.value = this.value.replace(/(\..*)\./g, \'$1\');"></div>'
+        +'</div>'
+        +'<div style="width: 130px; margin-right: 5px;">'
+        +'<div class=""><input type="text" name="total_amount[]" id="total_amount' + asset_count + '" value="" class="form-control border_error" placeholder="Rs."  oninput="this.value = this.value.replace(/[^0-9.]/g, "");this.value = this.value.replace(/(\..*)\./g, \'$1\');"></div>'
+        +'</div>'
+        +'<div>'
+        +'<div class="fw-semibold"></div>'
+        +'<div class=""><button type="button" data-fieldid="' + asset_count + '" class="btn btn-danger remove_more_asset" >Remove</button></div>'
+        +'</div>'
+        '</div>';
+      $("#asset_html").append(html);
+      $("#asset_count").val(asset_count);
+    });
+
+
+
+
+    ////////// styles.class
+
+
+    
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600;700&display=swap');
+
+
+html,
+body {
+	height: 100%;
+	font-family: 'Poppins', sans-serif;
+	-webkit-font-smoothing: antialiased !important;
+	
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	font-weight: bold;
+	font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+	font-size: 80px;
+	font-weight: 600;
+	font-family: 'Poppins', sans-serif;
+	color:#999999
+}
+
+h2 {
+	font-size: 34px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+h4 {
+	font-size: 24px;
+}
+
+h5 {
+	font-size: 18px;
+}
+
+h6 {
+	font-size: 12px;
+	letter-spacing: 2px;
+	color:#5e76ab
+}
+
+p {
+	font-size: 13px;
+	font-family: 'Poppins', sans-serif;
+	color: #5c5c5c;
+	
+	margin: 0 0 15px 0;
+}
+
+.ico{
+	font-size: 21px;
+	color:#5e76ab;
+	
+	
+}
+
+
+
+
+img {
+	max-width: 100%;
+}
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+	outline: none;
+	color: #ffffff;
+}
+
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+}
+
+ a{
+ text-decoration: none!important;
+ }
+
+
+
+
+.header__top {
+	background: #f5f5f5;
+}
+
+.header__top__left {
+	padding: 10px 0 13px;
+}
+
+.header__top__left ul li {
+	font-size: 14px;
+	color: #1c1c1c;
+	display: inline-block;
+	margin-right: 45px;
+	position: relative;
+}
+
+.header__top__left ul li:after {
+	position: absolute;
+	right: -25px;
+	top: 1px;
+	height: 20px;
+	width: 1px;
+	background: #000000;
+	opacity: 0.1;
+	content: "";
+}
+
+.header__top__left ul li:last-child {
+	margin-right: 0;
+}
+
+.header__top__left ul li:last-child:after {
+	display: none;
+}
+
+.header__top__left ul li i {
+	color: #252525;
+	margin-right: 5px;
+}
+
+.header__top__right {
+	text-align: right;
+	padding: 10px 0 13px;
+}
+
+.header__top__right__language {
+	position: relative;
+	display: inline-block;
+	margin-right: 40px;
+	cursor: pointer;
+}
+
+.header__top__right__language:hover ul {
+	top: 23px;
+	opacity: 1;
+	visibility: visible;
+}
+
+
+.header__top__right__auth::before{
+
+	position: absolute;
+	
+	margin-top: 0px;
+	height: 25px;
+	width: 2px;
+	background: grey;
+	opacity: 0.4;
+	content: "";
+	margin-left: -8px;
+}
+
+
+
+.header__top__right__auth::after{
+
+	position: absolute;
+	
+	margin-top: 0px;
+	height: 25px;
+	width: 2px;
+	background: grey;
+	opacity: 0.4;
+	content: "";
+	margin-left: 8px;
+}
+
+
+
+
+
+.header__top__right__language div {
+	font-size: 14px;
+	color: #1c1c1c;
+	display: inline-block;
+	margin-right: 4px;
+}
+
+.header__top__right__language span {
+	font-size: 14px;
+	color: #1c1c1c;
+	position: relative;
+	top: 2px;
+}
+
+.header__top__right__language ul {
+	background: #222222;
+	width: 100px;
+	text-align: left;
+	padding: 5px 0;
+	position: absolute;
+	left: 0;
+	top: 43px;
+	z-index: 9;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: all, 0.3s;
+	-moz-transition: all, 0.3s;
+	-ms-transition: all, 0.3s;
+	-o-transition: all, 0.3s;
+	transition: all, 0.3s;
+}
+
+.header__top__right__language ul li {
+	list-style: none;
+}
+
+.header__top__right__language ul li a {
+	font-size: 14px;
+	color: #ffffff;
+	padding: 5px 10px;
+}
+
+.header__top__right__auth {
+	display: inline-block;
+}
+
+.header__top__right__auth a {
+	display: block;
+	font-size: 14px;
+	color: #1c1c1c;
+}
+
+.header__top__right__auth a i {
+	margin-right: 16px;
+}
+
+.header__logo {
+	padding: 15px 0;
+}
+
+.header__logo a {
+	display: inline-block;
+}
+
+.header__menu {
+	padding: 24px 0;
+}
+
+.header__menu ul li {
+	list-style: none;
+	display: inline-block;
+	margin-right: 0px;
+	position: relative;
+	border: 2px solid #F90502;
+	border-radius: 30px;
+	
+}
+
+
+.header__menu ul li .header__menu__dropdown {
+	position: absolute;
+	left: 0;
+	top: 50px;
+	background: #222222;
+	width: 180px;
+	z-index: 9;
+	padding: 5px 0;
+	-webkit-transition: all, 0.3s;
+	-moz-transition: all, 0.3s;
+	-ms-transition: all, 0.3s;
+	-o-transition: all, 0.3s;
+	transition: all, 0.3s;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.header__menu ul li .header__menu__dropdown li {
+	margin-right: 0;
+	display: block;
+}
+
+.header__menu ul li .header__menu__dropdown li:hover>a {
+	background-color: red;
+}
+
+.header__menu ul li .header__menu__dropdown li a {
+	text-transform: capitalize;
+	color: #ffffff;
+	font-weight: 400;
+	padding: 5px 15px;
+}
+
+.header__menu ul li a{
+	
+	
+	border-radius: 30px;
+	font-size: 10px!important;
+    font-weight: 500;
+    padding: 9px 17px!important;
+	
+}
+
+.blog{
+	
+	border-radius: 30px;
+	font-size: 14px!important;
+    font-weight: 700;
+    padding: 9px 17px!important;
+	border: 2px solid #5e76ab;
+	background-color: #ffffff;
+	
+}
+
+.blog1{
+	
+	border-radius: 30px;
+	font-size: 14px!important;
+    font-weight: 700;
+    padding: 9px 17px!important;
+	border: 2px solid #f90502;
+	background-color: #ffffff;
+	
+}
+
+
+
+.blog2{
+	
+	border-radius: 30px;
+	font-size: 15px!important;
+    font-weight: 600;
+    padding: 9px 37px!important;
+	border: 1px solid #f90502;
+	background-color: #f90502;
+	color: white;
+	
+	
+}
+
+
+.rdo{
+	
+	border-radius: 30px;
+	font-size: 14px!important;
+    font-weight: 500;
+    padding: 9px 28px!important;
+	
+	background-color:#ebebeb;
+	
+}
+
+
+.phone{
+	color: #0F4392!important;
+		font-weight: 600;
+		margin-top: 28px!important;
+		margin-left: -4px;
+       font-size: 17px;
+
+	
+	}
+	
+	.phone :hover{
+		color: #0F4392!important;
+	}
+
+
+	.fot{
+
+		background-color: #000249;
+		
+	}
+
+
+
+ 
+.header__menu ul li.active a {
+	color: white;
+	background-color:#F90502;
+	font-size: 10px!important;
+    font-weight: 700!important;
+    padding: 9px 17px;
+	
+
+}
+
+.header__menu ul li:hover .header__menu__dropdown {
+	top: 30px;
+	opacity: 1;
+	visibility: visible;
+}
+
+.header__menu ul li:hover>a {
+	color: white;
+	background-color:#F90502;
+	border-radius: 30px;
+	}
+
+.header__menu ul li:last-child {
+	margin-right: 0;
+}
+
+.header__menu ul li a {
+	font-size: 14px;
+	color: #252525;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 2px;
+	-webkit-transition: all, 0.3s;
+	-moz-transition: all, 0.3s;
+	-ms-transition: all, 0.3s;
+	-o-transition: all, 0.3s;
+	transition: all, 0.3s;
+	padding: 5px 0;
+	display: block;
+}
+.humberger__menu__wrapper {
+	display: none;
+}
+
+.humberger__open {
+	display: none;
+}
+
+.item h5{
+
+	position: absolute;
+	left: 0;
+	width: 100%;
+	padding: 0 20px;
+	bottom: 20px;
+	
+}
+
+.item h5 a {
+	font-size: 18px;
+	color: white;
+	font-weight: 700;
+	text-transform: uppercase;
+	background:transparent;
+	display: block;
+}
+
+
+
+.footer input{
+	border:1px solid #84849D;
+	padding: 12px 20px;
+	border-radius: 30px;
+	margin-bottom:15px;
+	font-size: 10px;
+  }
+  .footer button {
+	padding: 12px 40px;
+	color:white;
+	font-size:15px;
+	background-color:#F90502;
+	border:none;
+	border-radius: 30px;
+	font-weight: 600;
+	
+  }
+  
+  
+  .footer li {
+	list-style:none;
+	padding-bottom: 7px;
+  }
+  .footer li a {
+	text-decoration:none;
+	color: #7d7d7d;
+	font-size: 12px;
+	font-weight: 600;
+  }
+  
+  .footer li a :hover{
+	text-decoration:none;
+	color: #7d7d7d;
+  }
+  .footer h3 {
+	color: #7d7d7d;
+	font-size: 14px;
+  }
+  
+  .social li a{
+	font-size: 17px;
+	font-weight: 800;
+  }
+ 
+  
+  .footer1{
+	padding-bottom: 20px;
+	padding-top: 50px;
+	padding-left: 30px;
+	border: 2px solid whitesmoke;
+	border-radius: 20px;
+	background-color: white;
+	margin-top: -70px;
+	margin-bottom: 40px;
+	box-shadow: 10px 10px 5px 3px rgba(0,0,0,0.75);
+  }
+  
+  .copy{
+	color: white;
+	font-weight: 400;
+   font-size: 12px;
+   margin-top: -30px;
+  }
+  
+  hr{
+  
+	border: 1px solid #7d7d7d;
+  }
+
+@media only screen and (min-width: 1200px) {
+	.container {
+		max-width: 1170px;
+	}
+}
+
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.header__menu ul li {
+		margin-right: 45px;
+	}
+	.hero__search__form {
+		width: 490px;
+	}
+	.hero__categories__all {
+		padding: 10px 25px 10px 20px;
+	}
+	.hero__categories ul {
+		padding-left: 20px;
+	}
+	.latest-product__slider.owl-carousel .owl-nav {
+		right: 0;
+	}
+	.product__details__tab .nav-tabs:before {
+		width: 265px;
+	}
+	.product__details__tab .nav-tabs:after {
+		width: 265px;
+	}
+	.shoping__discount form input {
+		width: 240px;
+	}
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.hero__categories {
+		margin-bottom: 30px;
+	}
+	.hero__search__form {
+		width: 485px;
+	}
+	.categories__slider.owl-carousel .owl-nav button {
+		left: -20px;
+	}
+	.categories__slider.owl-carousel .owl-nav button.owl-next {
+		right: -20px;
+	}
+	.filter__sort .nice-select {
+		padding-left: 5px;
+		padding-right: 28px;
+	}
+	.product__details__quantity {
+		margin-bottom: 10px;
+	}
+	.product__details__text .primary-btn {
+		margin-bottom: 10px;
+	}
+	.product__details__tab .nav-tabs:before {
+		width: 150px;
+	}
+	.product__details__tab .nav-tabs:after {
+		width: 150px;
+	}
+	.blog__details__author {
+		overflow: hidden;
+		margin-bottom: 25px;
+	}
+	.humberger__open {
+		display: block;
+		font-size: 22px;
+		color: #1c1c1c;
+		height: 35px;
+		width: 35px;
+		line-height: 33px;
+		text-align: center;
+		border: 1px solid #1c1c1c;
+		cursor: pointer;
+		position: absolute;
+		right: 15px;
+		top: 22px;
+	}
+	.header .container {
+		position: relative;
+	}
+	.humberger__menu__wrapper {
+		width: 300px;
+		background: #ffffff;
+		position: fixed;
+		left: -300px;
+		top: 0;
+		height: 100%;
+		overflow-y: auto;
+		z-index: 99;
+		padding: 30px;
+		padding-top: 50px;
+		opacity: 0;
+		display: block;
+		-webkit-transition: all, 0.6s;
+		-moz-transition: all, 0.6s;
+		-ms-transition: all, 0.6s;
+		-o-transition: all, 0.6s;
+		transition: all, 0.6s;
+	}
+	.humberger__menu__wrapper.show__humberger__menu__wrapper {
+		opacity: 1;
+		left: 0;
+	}
+	.humberger__menu__logo {
+		margin-bottom: 30px;
+	}
+	.humberger__menu__logo a {
+		display: inline-block;
+	}
+	.humberger__menu__contact {
+		padding: 10px 0 13px;
+	}
+	.humberger__menu__contact ul li {
+		font-size: 14px;
+		color: #1c1c1c;
+		position: relative;
+		line-height: 30px;
+		list-style: none;
+	}
+	.humberger__menu__contact ul li i {
+		color: #252525;
+		margin-right: 5px;
+	}
+	.humberger__menu__cart ul {
+		display: inline-block;
+		margin-right: 25px;
+	}
+	.humberger__menu__cart ul li {
+		list-style: none;
+		display: inline-block;
+		margin-right: 15px;
+	}
+	.humberger__menu__cart ul li:last-child {
+		margin-right: 0;
+	}
+	.humberger__menu__cart ul li a {
+		position: relative;
+	}
+	.humberger__menu__cart ul li a i {
+		font-size: 18px;
+		color: #1c1c1c;
+	}
+
+	.humberger__menu__cart .header__cart__price {
+		font-size: 14px;
+		color: #6f6f6f;
+		display: inline-block;
+	}
+	.humberger__menu__cart .header__cart__price span {
+		color: #252525;
+		font-weight: 700;
+	}
+	.humberger__menu__cart {
+		margin-bottom: 25px;
+	}
+	.humberger__menu__widget {
+		margin-bottom: 20px;
+	}
+	.humberger__menu__widget .header__top__right__language {
+		margin-right: 20px;
+	}
+	.humberger__menu__nav {
+		display: none;
+	}
+	.humberger__menu__wrapper .header__top__right__social {
+		display: block;
+		margin-right: 0;
+		margin-bottom: 20px;
+	}
+	.humberger__menu__wrapper .slicknav_btn {
+		display: none;
+	}
+	.humberger__menu__wrapper .slicknav_nav .slicknav_item a {
+		border-bottom: none !important;
+	}
+	.humberger__menu__wrapper .slicknav_nav {
+		display: block !important;
+	}
+	.humberger__menu__wrapper .slicknav_menu {
+		background: transparent;
+		padding: 0;
+		margin-bottom: 30px;
+	}
+	.humberger__menu__wrapper .slicknav_nav ul {
+		margin: 0;
+	}
+	.humberger__menu__wrapper .slicknav_nav a {
+		color: #1c1c1c;
+		font-size: 16px;
+		font-weight: 600;
+		margin: 0;
+		border-bottom: 1px solid #e1e1e1;
+	}
+	.humberger__menu__wrapper .slicknav_nav a:hover {
+		-webkit-border-radius: 0;
+		border-radius: 0;
+		background: transparent;
+		color: #F90502;
+	}
+	.humberger__menu__wrapper .slicknav_nav .slicknav_row,
+	.humberger__menu__wrapper .slicknav_nav a {
+		padding: 8px 0;
+	}
+	.humberger__menu__overlay {
+		position: fixed;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		content: "";
+		z-index: 98;
+		visibility: hidden;
+		-webkit-transition: all, 0.6s;
+		-moz-transition: all, 0.6s;
+		-ms-transition: all, 0.6s;
+		-o-transition: all, 0.6s;
+		transition: all, 0.6s;
+	}
+	.humberger__menu__overlay.active {
+		visibility: visible;
+	}
+	.header__top {
+		display: none;
+	}
+	.header__menu {
+		display: none;
+	}
+	.header__cart {
+		text-align: center;
+		padding: 10px 0 24px;
+	}
+	.over_hid {
+		overflow: hidden;
+	}
+}
+
+
+@media only screen and (max-width: 767px) {
+	.hero__categories {
+		margin-bottom: 30px;
+	}
+	.hero__search {
+		margin-bottom: 30px;
+	}
+	.hero__search__form {
+		width: 100%;
+	}
+	.hero__search__form form input {
+		width: 100%;
+	}
+	.hero__search__form form .hero__search__categories {
+		display: none;
+	}
+	.hero__search__phone {
+		float: left;
+		margin-top: 30px;
+	}
+	.categories__slider.owl-carousel .owl-nav {
+		text-align: center;
+		margin-top: 40px;
+	}
+	.categories__slider.owl-carousel .owl-nav button {
+		position: relative;
+		left: 0;
+		top: 0;
+		-webkit-transform: translateY(0);
+	}
+	.categories__slider.owl-carousel .owl-nav button.owl-next {
+		right: -10px;
+	}
+	.footer__copyright {
+		text-align: center;
+	}
+	.footer__copyright__text {
+		float: none;
+		margin-bottom: 25px;
+	}
+	.footer__copyright__payment {
+		float: none;
+	}
+	.filter__item {
+		text-align: center;
+	}
+	.filter__option {
+		text-align: center;
+	}
+	.product__details__pic {
+		margin-bottom: 40px;
+	}
+	.product__details__tab .nav-tabs:before {
+		display: none;
+	}
+	.product__details__tab .nav-tabs:after {
+		display: none;
+	}
+	.shoping__cart__table {
+		overflow-y: auto;
+	}
+	.shoping__discount form input {
+		margin-bottom: 15px;
+	}
+	.blog__details__author {
+		overflow: hidden;
+		margin-bottom: 25px;
+	}
+	.humberger__open {
+		display: block;
+		font-size: 22px;
+		color: #1c1c1c;
+		height: 35px;
+		width: 35px;
+		line-height: 33px;
+		text-align: center;
+		border: 1px solid #1c1c1c;
+		cursor: pointer;
+		position: absolute;
+		right: 15px;
+		top: 22px;
+	}
+	.header .container {
+		position: relative;
+	}
+	.humberger__menu__wrapper {
+		width: 300px;
+		background: #ffffff;
+		position: fixed;
+		left: -300px;
+		top: 0;
+		height: 100%;
+		overflow-y: auto;
+		z-index: 99;
+		padding: 30px;
+		padding-top: 50px;
+		opacity: 0;
+		display: block;
+		-webkit-transition: all, 0.6s;
+		-moz-transition: all, 0.6s;
+		-ms-transition: all, 0.6s;
+		-o-transition: all, 0.6s;
+		transition: all, 0.6s;
+	}
+	.humberger__menu__wrapper.show__humberger__menu__wrapper {
+		opacity: 1;
+		left: 0;
+	}
+	.humberger__menu__logo {
+		margin-bottom: 30px;
+	}
+	.humberger__menu__logo a {
+		display: inline-block;
+	}
+	.humberger__menu__contact {
+		padding: 10px 0 13px;
+	}
+	.humberger__menu__contact ul li {
+		font-size: 14px;
+		color: #1c1c1c;
+		position: relative;
+		line-height: 30px;
+		list-style: none;
+	}
+	.humberger__menu__contact ul li i {
+		color: #252525;
+		margin-right: 5px;
+	}
+	.humberger__menu__cart ul {
+		display: inline-block;
+		margin-right: 25px;
+	}
+	.humberger__menu__cart ul li {
+		list-style: none;
+		display: inline-block;
+		margin-right: 15px;
+	}
+	.humberger__menu__cart ul li:last-child {
+		margin-right: 0;
+	}
+	.humberger__menu__cart ul li a {
+		position: relative;
+	}
+	.humberger__menu__cart ul li a i {
+		font-size: 18px;
+		color: #1c1c1c;
+	}
+	
+	
+	.humberger__menu__cart {
+		margin-bottom: 25px;
+	}
+	.humberger__menu__widget {
+		margin-bottom: 20px;
+	}
+	.humberger__menu__widget .header__top__right__language {
+		margin-right: 20px;
+	}
+	.humberger__menu__nav {
+		display: none;
+	}
+	
+	.humberger__menu__wrapper .slicknav_btn {
+		display: none;
+	}
+	.humberger__menu__wrapper .slicknav_nav .slicknav_item a {
+		border-bottom: none !important;
+	}
+	.humberger__menu__wrapper .slicknav_nav {
+		display: block !important;
+	}
+	.humberger__menu__wrapper .slicknav_menu {
+		background: transparent;
+		padding: 0;
+		margin-bottom: 30px;
+	}
+	.humberger__menu__wrapper .slicknav_nav ul {
+		margin: 0;
+	}
+	.humberger__menu__wrapper .slicknav_nav a {
+		color: #f90502;
+		font-size: 16px;
+		font-weight: 600;
+		margin: 0;
+		border-bottom: 1px solid #F90502;
+	}
+	.humberger__menu__wrapper .slicknav_nav a:hover {
+		-webkit-border-radius: 0;
+		border-radius: 0;
+		background: transparent;
+		color: #F90502;
+	}
+	.humberger__menu__wrapper .slicknav_nav .slicknav_row,
+	.humberger__menu__wrapper .slicknav_nav a {
+		padding: 8px 0;
+	}
+	.humberger__menu__overlay {
+		position: fixed;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		content: "";
+		z-index: 98;
+		visibility: hidden;
+		-webkit-transition: all, 0.6s;
+		-moz-transition: all, 0.6s;
+		-ms-transition: all, 0.6s;
+		-o-transition: all, 0.6s;
+		transition: all, 0.6s;
+	}
+	.humberger__menu__overlay.active {
+		visibility: visible;
+	}
+	.header__top {
+		display: none;
+	}
+	.header__menu {
+		display: none;
+	}
+	.header__cart {
+		text-align: center;
+		padding: 10px 0 24px;
+	}
+	.over_hid {
+		overflow: hidden;
+	}
+}
+
+.carousel-container {
+	border-radius: 13px;
+	overflow: hidden;
+	max-width: 900px;
+	position: relative;
+	box-shadow: 0 0 30px -20px #223344;
+	margin: auto;
+	z-index: 0;
+  }
+  
+  
+  .mySlides {
+	display: none;
+  }
+  .mySlides img {
+	display: block;
+	width: 100%;
+  }
+  
+  
+  .prev,
+  .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	width: auto;
+	padding: 20px;
+	color: white;
+	font-weight: bold;
+	font-size: 24px;
+	border-radius: 0 8px 8px 0;
+	background: rgba(173, 216, 230, 0.1);
+	user-select: none;
+  }
+  .next {
+	right: 0;
+	border-radius: 8px 0 0 8px;
+  }
+  .prev:hover,
+  .next:hover {
+	background-color: rgba(173, 216, 230, 0.3);
+  }
+  
+  
+  .text {
+	color: #f2f2f2;
+	background-color: rgba(10, 10, 20, 0.1);
+	backdrop-filter: blur(6px);
+	border-radius: 10px;
+	font-size: 20px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 60px;
+	left: 50%;
+	transform: translate(-50%);
+	text-align: center;
+  }
+  
+   .number {
+	color: #f2f2f2;
+	font-size: 16px;
+	background-color: rgba(173, 216, 230, 0.15);
+	backdrop-filter: blur(6px);
+	border-radius: 10px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+  }
+  .dots-container {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translate(-50%);
+  }
+  
+  .dots {
+	cursor: pointer;
+	height: 13px;
+	width: 13px;
+	margin: 0 4px;
+	background-color:#dfd2c3;
+	backdrop-filter: blur(2px);
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.3s ease;
+	border: 2px solid #45413d;
+  }
+  
+  .dots.active {
+	  background-color:  #F90502;
+  }
+  
+ 
+  .animate {
+	-webkit-animation-name: animate;
+	-webkit-animation-duration: 1s;
+	animation-name: animate;
+	animation-duration: 2s;
+  }
+  
+  @keyframes animate {
+	from {
+	  transform: scale(1.1) rotateY(10deg);
+	}
+	to {
+	  transform: scale(1) rotateY(0deg);
+	}
+  }
+  .acc-container {
+	max-width: 1000px;
+	width: 100%;
+	margin: auto;
+  }
+  
+  .acc {
+	margin-bottom: 10px;
+  }
+  
+  .acc-head {
+	background-color: white;
+	padding: 15px 10px;
+	font-size: 22px;
+	position: relative;
+	cursor: pointer;
+	color:black;
+  
+	border: 7px solid white;
+	box-shadow: #f2f2f2;
+	background-color: white;
+   }
+  
+   .acc-head::before,
+   .acc-head::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	background-color: black;
+	transition: all .3s;
+   }
+  
+   .acc-head::before {
+	right: 30px;
+	width: 3px;
+	height: 20px;
+	margin-top: -10px;
+  }
+  
+  .acc-head::after {
+	right: 21px;
+	width: 20px;
+	height: 3px;
+	margin-top: -2px;
+  }
+  
+  .acc-head h5 {
+	color: black;
+	font-weight: bold;
+	font-size: 13px;
+   
+  }
+  
+  .acc-content {
+   
+  
+	padding: 15px 10px;
+	display: none;
+	max-height: 0;
+	padding: 0;
+	background: #EDEADE;
+	  color: #3C3C40;
+	  padding: 2em 1em;
+	  font-size: 1.15em;
+	  margin: 1em;
+	  border-radius: 6px;
+	  overflow: hidden;
+	  max-height: 300px;
+	  transition: 500ms;
+	}
+	 .acc-head.active::before {
+	  transform: rotate(90deg);
+  }
+  
+.owl-nav button {
+	position: absolute;
+	top: 50%;
+	background-color: #000!important;
+	color: red;
+	margin: 0;
+	transition: all 0.3s ease-in-out;
+	border-radius:50% ;
+	width: 35px;
+	height: 35px;
+  }
+  .owl-nav button.owl-prev {
+	left: -10px;
+	color: #F90502!important;
+	background-color:#EDEADE!important;
+	border: 1px solid #000249 !important;
+  }
+  .owl-nav button.owl-next {
+	right: -15px;
+	color: #F90502!important;
+	background-color:#EDEADE!important;
+	border: 1px solid #000249 !important;
+  }
+  
+  
+  .owl-nav button {
+	  position: absolute;
+	  top: 50%;
+	  transform: translateY(-50%);
+	  background: rgba(255, 255, 255, 0.38) !important;
+	  color: red;
+  }
+  span {
+	  font-size: 70px;    
+	  position: relative;
+	  top: -5px;
+  }
+  .owl-nav button:focus {
+	  outline: none;
+  }
+
+
+  .banner{
+
+	background-image: url("../images/banner.png");
+	background-repeat: no-repeat, repeat;
+	background-position: center; 
+	background-size: cover; 
+	padding-top: 50px;
+   
+
+  }
+  
+  .login-form{
+	background:white;
+	margin-top: -40px;
+	margin-bottom: 200px;
+	
+	padding-top: 90px;
+	padding-bottom: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+	border-radius: 20px;
+	color: black;
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  }
+
+  .login-form h5{
+	font-size: 13px;
+	color:black;
+	margin-top: -70px;
+	font-weight: 600;
+  }
+
+  
+  .login-form h2{
+	font-size: 17px;
+	color:black;
+	font-weight: 800;
+  }
+
+  
+  .login-form p{
+	font-size: 10px;
+	color:black;
+	font-weight: 700;
+  }
+
+  .login-form a{
+	font-size: 12px;
+	color:black;
+	font-weight: 700;
+  }
+
+
+  .login-form span{
+	font-size: 14px;
+	color:black;
+	font-weight: 500;
+  }
+
+
+
+  .login-form .asd{
+	border:1px solid grey ;  
+	border-radius: 10px;
+  }
+  
+  .abc{
+	border-right:1px solid grey ;  
+   
+  }
+
+   .login-heading{
+	text-align: center;
+	margin-top: 20px;
+  }
+
+
+
+  .colm{
+	margin-top: -210px!important;
+}
+
+
+
+
+
+  
+
+  ._social-links1 {
+	position: fixed;
+	right: 20px;
+	top: 87%;
+	transform: translatey(-50%);
+	padding: 1.2em ;
+	background: #F90502;
+	border-radius: 0.7em;
+	box-shadow: -8px 0px 20px #000249;
+	transition: all 300ms ease;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+   }
+  
+  
+  ._social-links1:hover {
+	box-shadow: -8px 0px 20px #000249;
+	padding: 1em;
+  }
+  
+  ._links-list1 {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+   
+  }
+  ._social-link1 a {
+	color: white;
+	font-size: 1.0rem;
+	transition: all 200ms ease;
+  }
+
+  ._social-link1 p {
+	color: white!important;
+	font-size: 2px !important;
+	transition: all 200ms ease;
+  }
+  
+  
+  ._social-link1 a:visited {
+	color: white;
+  }
+  ._social-link1 a:hover {
+	color: white;
+	font-size: 1.75rem;
+  }
+
+   ._social-links {
+	position: fixed;
+	right: 20px;
+	top: 65%;
+	transform: translatey(-50%);
+	padding: 1.1em ;
+	background: #000249;
+	border-radius: 0.8em;
+	box-shadow: -4px 0px 0px #000249;
+	transition: all 300ms ease;
+	color: white;
+	font-size: 20px;
+	}
+  
+  ._social-links:hover {
+	box-shadow: -8px 0px 20px #F90502;
+	padding: 1em;
+  }
+  
+  ._links-list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.2em;
+  }
+  ._social-link a {
+	color: white;
+	font-size: 1.0rem;
+	transition: all 200ms ease;
+  }
+  ._social-link a:visited {
+	color: white;
+  }
+  ._social-link a:hover {
+	color: #F90502;
+	font-size: 1.75rem;
+  }
+
+
+
+   
+
+.owl-carousel .owl-stage  {
+	
+	display: flex;
+}
+.owl-item {
+	display: flex;
+	flex: 1 0 auto;
+}
+.caption {
+	display: flex;
+	flex: 1 0 auto;
+	flex-direction: column;
+}
+.flex-text {
+	flex-grow: 1
+}
+.thumbnail {
+	display: flex;
+	flex-direction: column;
+	margin: 0 15px;
+}
+
+
+
+
+
+
+
+//////// style.css

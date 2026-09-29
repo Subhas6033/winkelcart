@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotels, Resorts & Stays - WinkelKart</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./assets/images/logo/Winkel_Shop__2_-removebg-preview.png" type="image/x-ico">
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- font awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  
+  <!-- ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <style>
+    /* ================= RESET & VARIABLES ================= */
+    :root {
+      /* Theme Colors */
+      --wk-green: #43a047;       /* Primary Green */
+      --wk-dark-green: #2e7d32;  /* Darker Green */
+      --wk-light-green: #e8f5e9; /* Light Background Green */
+      --wk-blue: #0288d1;        /* Travel Blue */
+      --wk-dark-blue: #01579b;   /* Deep Blue */
+      --wk-yellow: #fdd835;      /* Stars/Accents */
+      --wk-pink: #e91e63;        /* Deals */
+      
+      /* Text & Backgrounds */
+      --text-main: #212121;
+      --text-light: #757575;
+      --bg-body: #f9f9f9;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+    
+    .container {
+      max-width: 1350px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    /* ================= TOP BRANDING BAR ================= */
+    .top-branding {
+      background-color: var(--wk-dark-green);
+      color: white;
+      padding: 8px 0;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    /* ================= HEADER ================= */
+    header {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: white;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .header-main {
+      padding: 15px 0;
+      background-color: var(--wk-green);
+    }
+
+    .header-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    /* Logo Area */
+    .logo-text {
+      font-size: 28px;
+      font-weight: 800;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .logo-text span { color: var(--wk-yellow); }
+
+    /* Search Bar */
+    .header-search-container {
+      flex: 1;
+      position: relative;
+      max-width: 600px;
+    }
+
+    .search-field {
+      width: 100%;
+      padding: 12px 20px;
+      border-radius: 5px;
+      border: none;
+      font-size: 14px;
+      outline: none;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .search-btn {
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--wk-blue);
+      color: white;
+      border: none;
+      width: 35px;
+      height: 35px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Header Icons */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      color: white;
+    }
+
+    .sell-btn {
+      background: var(--wk-blue);
+      color: white;
+      padding: 8px 18px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 13px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .sell-btn:hover { background: #1565c0; }
+
+    .action-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 12px;
+      cursor: pointer;
+      color: rgba(255,255,255,0.9);
+    }
+    .action-item:hover { color: white; transform: scale(1.05); }
+    .action-item ion-icon { font-size: 24px; margin-bottom: 2px; }
+
+    /* ================= SUB-NAVBAR ================= */
+    .sub-navbar {
+      background: white;
+      border-bottom: 1px solid #eee;
+    }
+
+    .nav-list {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 12px 0;
+      flex-wrap: wrap;
+    }
+
+    .nav-item a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #444;
+      padding: 5px 10px;
+      border-radius: 20px;
+    }
+
+    .nav-item a:hover, .nav-item a.active {
+      background-color: var(--wk-light-green);
+      color: var(--wk-green);
+    }
+    
+    .nav-icon { width: 22px; height: 22px; object-fit: contain; }
+
+    /* Mobile Toggle */
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* ================= TRAVEL HERO BANNER ================= */
+    .travel-hero {
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/images/products/hotels11.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .hero-content h1 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+
+    .booking-bar {
+      background: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .booking-input {
+      border: none;
+      outline: none;
+      padding: 10px;
+      flex: 1;
+      font-family: 'Poppins', sans-serif;
+      border-right: 1px solid #eee;
+    }
+    .booking-input:last-of-type { border-right: none; }
+
+    .booking-btn {
+      background: var(--wk-blue);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .booking-btn:hover { background: var(--wk-dark-blue); }
+
+    /* ================= BENEFIT CARDS (Grid) ================= */
+    .benefits-section {
+      margin-bottom: 50px;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .benefit-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border: 1px solid #eee;
+      transition: 0.3s;
+    }
+
+    .benefit-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+
+    .benefit-img img {
+      width: 100px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .benefit-text h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: var(--text-main);
+    }
+
+    .benefit-text a {
+      color: var(--wk-blue);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* ================= HOTEL LISTINGS (GRID) ================= */
+    .section-container {
+      max-width: 1350px;
+      margin: 0 auto 50px auto;
+      padding: 0 15px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .view-all { color: var(--wk-blue); font-weight: 600; font-size: 14px; }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .hotel-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #eee;
+      transition: 0.3s;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hotel-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    }
+
+    .hotel-img-container {
+      position: relative;
+      height: 180px;
+      overflow: hidden;
+    }
+
+    .hotel-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    .hotel-card:hover .hotel-img-container img { transform: scale(1.1); }
+
+    .stay-label {
+      position: absolute;
+      top: 10px; left: 10px;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      backdrop-filter: blur(2px);
+    }
+
+    .rating-badge {
+      position: absolute;
+      bottom: 10px; right: 10px;
+      background: var(--wk-blue);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .hotel-info { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; }
+
+    .hotel-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: var(--text-main);
+    }
+
+    .location {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 10px;
+      display: flex; align-items: center; gap: 5px;
+    }
+
+    .price-container {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 1px solid #f5f5f5;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .price span { font-size: 12px; color: var(--text-light); font-weight: 400; }
+
+    .book-btn {
+      background: white;
+      color: var(--wk-blue);
+      border: 1px solid var(--wk-blue);
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .book-btn:hover { background: var(--wk-blue); color: white; }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background: #263238;
+      color: #cfd8dc;
+      padding-top: 60px;
+    }
+
+    .footer-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+
+    .footer-col h3 {
+      color: white;
+      font-size: 18px;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    .footer-col h3::after {
+      content:''; position: absolute; bottom: -5px; left: 0; width: 40px; height: 3px; background: var(--wk-green);
+    }
+
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { color: #b0bec5; font-size: 14px; }
+    .footer-links a:hover { color: var(--wk-green); padding-left: 5px; }
+
+    .footer-bottom {
+      background: #1c252a;
+      text-align: center;
+      padding: 20px 0;
+      border-top: 1px solid #37474f;
+      font-size: 14px;
+    }
+    
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none;
+      background: white;
+      position: absolute; top: 100%; left: 0; width: 100%;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      padding: 10px 0;
+      z-index: 999;
+    }
+    .mobile-menu.show { display: block; }
+    .mobile-menu a {
+      display: block; padding: 12px 20px; border-bottom: 1px solid #f1f1f1;
+      font-weight: 500; color: #444;
+    }
+
+    @media (max-width: 900px) {
+      .header-search-container { display: none; }
+      .nav-list { display: none; }
+      .menu-toggle { display: block; }
+      .booking-bar { flex-direction: column; background: rgba(255,255,255,0.95); width: 90%; }
+      .booking-input { width: 100%; border-right: none; border-bottom: 1px solid #eee; }
+      .booking-btn { width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BRANDING BAR -->
+  <div class="top-branding">
+    EXPLORE THE WORLD WITH WINKELKART STAYS
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-main">
+      <div class="container header-wrapper">
+        
+        <!-- Logo -->
+        <a href="index.html" class="logo-text">
+          Winkel<span>Kart</span>
+        </a>
+
+        <!-- Search Bar -->
+        <div class="header-search-container">
+          <input type="text" class="search-field" placeholder="Search Hotels, Resorts, Villas...">
+          <button class="search-btn">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+        </div>
+
+        <!-- Right Actions -->
+        <div class="header-actions">
+          <a href="register.html" class="sell-btn">List Property</a>
+          <a href="#" class="action-item"><ion-icon name="heart-outline"></ion-icon><span>Saved</span></a>
+          <a href="#" class="action-item"><ion-icon name="briefcase-outline"></ion-icon><span>Trips</span></a>
+          <a href="createacc.html" class="action-item"><ion-icon name="person-circle-outline"></ion-icon><span>Account</span></a>
+          <div class="menu-toggle" id="menu-toggle"><ion-icon name="menu-outline"></ion-icon></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUB NAVBAR -->
+    <div class="sub-navbar">
+      <div class="container">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="computers.html">
+              <img src="./assets/images/icons/dealzone.png" class="nav-icon" alt=""> Computers
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="Electronics.html">
+              <img src="./assets/images/icons/elec.png" class="nav-icon" alt=""> Electronics
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="Mobile.html">
+              <img src="./assets/images/icons/babystore.png" class="nav-icon" alt=""> Groceries
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="Hotels&Resorts.html" class="active">
+              <img src="./assets/images/icons/home.png" class="nav-icon" alt=""> Hotels & Resorts
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#">
+              <img src="./assets/images/icons/icons8-shirt-50.png" class="nav-icon" alt=""> Fashion
+            </a>
+          </li>
+          <li class="nav-item"><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Container -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="computers.html">Computers & Laptops</a>
+      <a href="Electronics.html">Electronics</a>
+      <a href="Mobile.html">Groceries</a>
+      <a href="Hotels&Resorts.html">Hotels & Resorts</a>
+      <a href="register.html">Sell on WinkelKart</a>
+    </div>
+  </header>
+
+  <!-- TRAVEL HERO BANNER -->
+  <div class="travel-hero">
+    <div class="hero-content">
+      <h1>Find Your Next Getaway</h1>
+      <p>From cozy cottages to luxury resorts, discover places to stay.</p>
+      
+      <!-- Mock Booking Bar -->
+      <div class="booking-bar">
+        <input type="text" class="booking-input" placeholder="Where are you going?">
+        <input type="text" class="booking-input" placeholder="Check-in — Check-out" onfocus="(this.type='date')">
+        <input type="number" class="booking-input" placeholder="Guests">
+        <button class="booking-btn">Search</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BENEFITS GRID -->
+  <div class="container benefits-section">
+    <div class="benefits-grid">
+      <!-- Card 1 -->
+      <div class="benefit-card">
+        <div class="benefit-img">
+          <img src="assets/images/icons/top banner 1.jpg" alt="Reward">
+        </div>
+        <div class="benefit-text">
+          <h4>Winkel Rewards</h4>
+          <p style="font-size:13px; color:#666; margin-bottom:5px;">Stay 10 nights, get 1 reward night free.</p>
+          <a href="#">Join Now &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="benefit-card">
+        <div class="benefit-img">
+          <img src="assets/images/icons/top banner 2.jpg" alt="Flexible">
+        </div>
+        <div class="benefit-text">
+          <h4>Flexible Booking</h4>
+          <p style="font-size:13px; color:#666; margin-bottom:5px;">Plans change. Cancel at any time for free.</p>
+          <a href="#">Book Now &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="benefit-card">
+        <div class="benefit-img">
+          <img src="assets/images/icons/top banner 3.jpg" alt="Compare">
+        </div>
+        <div class="benefit-text">
+          <h4>Smart Compare</h4>
+          <p style="font-size:13px; color:#666; margin-bottom:5px;">Compare hotels side-by-side easily.</p>
+          <a href="#">Start Comparing &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: DISCOVER STAYS -->
+  <section class="section-container">
+    <div class="section-header">
+      <h3 class="section-title"><ion-icon name="bed-outline" style="color:var(--wk-blue); margin-right:10px;"></ion-icon> Discover Your New Favourite Stay</h3>
+      <a href="#" class="view-all">View All Properties &rarr;</a>
+    </div>
+
+    <div class="product-grid">
+      <!-- Hotel 1 -->
+      <div class="hotel-card">
+        <div class="hotel-img-container">
+          <img src="assets/images/products/hotels11.jpg" alt="Resort">
+          <div class="stay-label">Resort</div>
+          <div class="rating-badge">4.8</div>
+        </div>
+        <div class="hotel-info">
+          <h3 class="hotel-title">Grand Royal Resort</h3>
+          <p class="location"><ion-icon name="location-sharp"></ion-icon> Goa, India</p>
+          <div class="price-container">
+            <div class="price">₹5,999 <span>/ night</span></div>
+            <button class="book-btn">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotel 2 -->
+      <div class="hotel-card">
+        <div class="hotel-img-container">
+          <img src="assets/images/products/hotels22.jpg" alt="Apart Hotel">
+          <div class="stay-label">Apart Hotel</div>
+          <div class="rating-badge">4.5</div>
+        </div>
+        <div class="hotel-info">
+          <h3 class="hotel-title">Skyline Apartments</h3>
+          <p class="location"><ion-icon name="location-sharp"></ion-icon> Mumbai, India</p>
+          <div class="price-container">
+            <div class="price">₹3,500 <span>/ night</span></div>
+            <button class="book-btn">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotel 3 -->
+      <div class="hotel-card">
+        <div class="hotel-img-container">
+          <img src="assets/images/products/hotels33.jpg" alt="Apartment">
+          <div class="stay-label">Apartment</div>
+          <div class="rating-badge">4.2</div>
+        </div>
+        <div class="hotel-info">
+          <h3 class="hotel-title">Cozy City Loft</h3>
+          <p class="location"><ion-icon name="location-sharp"></ion-icon> Bangalore, India</p>
+          <div class="price-container">
+            <div class="price">₹2,800 <span>/ night</span></div>
+            <button class="book-btn">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotel 4 -->
+      <div class="hotel-card">
+        <div class="hotel-img-container">
+          <img src="assets/images/products/hotels44.jpg" alt="Spa">
+          <div class="stay-label">Spa & Wellness</div>
+          <div class="rating-badge">4.9</div>
+        </div>
+        <div class="hotel-info">
+          <h3 class="hotel-title">Himalayan Spa Retreat</h3>
+          <p class="location"><ion-icon name="location-sharp"></ion-icon> Manali, India</p>
+          <div class="price-container">
+            <div class="price">₹8,500 <span>/ night</span></div>
+            <button class="book-btn">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotel 5 -->
+      <div class="hotel-card">
+        <div class="hotel-img-container">
+          <img src="assets/images/products/hotels55.jpg" alt="Sea View">
+          <div class="stay-label">Sea View</div>
+          <div class="rating-badge">4.7</div>
+        </div>
+        <div class="hotel-info">
+          <h3 class="hotel-title">Ocean Blue Villa</h3>
+          <p class="location"><ion-icon name="location-sharp"></ion-icon> Pondicherry, India</p>
+          <div class="price-container">
+            <div class="price">₹6,200 <span>/ night</span></div>
+            <button class="book-btn">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotel 6 -->
+      <div class="hotel-card">
+        <div class="hotel-img-container">
+          <img src="assets/images/products/hotels11.jpg" alt="Luxury">
+          <div class="stay-label">Luxury</div>
+          <div class="rating-badge">5.0</div>
+        </div>
+        <div class="hotel-info">
+          <h3 class="hotel-title">The Oberoi Udaivilas</h3>
+          <p class="location"><ion-icon name="location-sharp"></ion-icon> Udaipur, India</p>
+          <div class="price-container">
+            <div class="price">₹25,000 <span>/ night</span></div>
+            <button class="book-btn">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-wrapper">
+      <div class="footer-col">
+        <h3>WinkelKart</h3>
+        <p style="font-size:14px; line-height:1.6; color:#b0bec5;">
+          India's most trusted online shopping destination. From high-end electronics to fresh groceries and luxury stays, we have it all.
+        </p>
+        <div style="margin-top:20px; display:flex; gap:10px;">
+           <ion-icon name="logo-facebook" style="font-size:24px; color:white;"></ion-icon>
+           <ion-icon name="logo-instagram" style="font-size:24px; color:white;"></ion-icon>
+           <ion-icon name="logo-twitter" style="font-size:24px; color:white;"></ion-icon>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Categories</h3>
+        <ul class="footer-links">
+          <li><a href="computers.html">Computers</a></li>
+          <li><a href="Electronics.html">Electronics</a></li>
+          <li><a href="Mobile.html">Groceries</a></li>
+          <li><a href="Hotels&Resorts.html">Hotels & Resorts</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>For Business</h3>
+        <ul class="footer-links">
+          <li><a href="register.html">List Your Property</a></li>
+          <li><a href="#">Partner Hub</a></li>
+          <li><a href="#">Vendor Login</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <ul class="footer-links">
+          <li style="color:#b0bec5; font-size:14px;">
+            <ion-icon name="location" style="vertical-align:middle; margin-right:5px;"></ion-icon>
+            SRD Technologies, Kulsum Complex, West Bengal
+          </li>
+          <li>
+             <a href="tel:6294693931">
+               <ion-icon name="call" style="vertical-align:middle; margin-right:5px;"></ion-icon> +91 6294693931
+             </a>
+          </li>
+          <li>
+             <a href="mailto:info@winkelkart.com">
+               <ion-icon name="mail" style="vertical-align:middle; margin-right:5px;"></ion-icon> info@winkelkart.com
+             </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 WinkelKart. All Rights Reserved. Designed by SRD Techno.</p>
+        <img src="./assets/images/payment.png" alt="" style="max-height:30px; margin:10px auto; opacity:0.6;">
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE MENU SCRIPT -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>

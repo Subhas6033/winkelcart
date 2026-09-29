@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/html/yashujee
+permissions:
+  - object: /var/www/html/yashujee
+    pattern: '**'
+    mode: '0755'
+    owner: root
+    group: root
+    type:
+      - file
+      - directory

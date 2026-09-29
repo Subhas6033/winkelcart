@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fresh Groceries & Essentials - WinkelKart</title>
+
+        <!-- favicon -->
+        <link
+            rel="shortcut icon"
+            href="./assets/images/logo/Winkel_Shop__2_-removebg-preview.png"
+            type="image/x-ico"
+        />
+
+        <!-- google font link -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- font awesome-->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+
+        <!-- ionicons -->
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+
+        <style>
+            /* ================= RESET & VARIABLES ================= */
+            :root {
+                /* Theme Colors - Optimized for Groceries (Fresh Look) */
+                --wk-green: #43a047; /* Primary Fresh Green */
+                --wk-dark-green: #2e7d32; /* Darker Green */
+                --wk-light-green: #e8f5e9; /* Light Background Green */
+                --wk-yellow: #fdd835; /* Accents */
+                --wk-orange: #fb8c00; /* Deals */
+                --wk-blue: #1e88e5; /* Links */
+
+                /* Text & Backgrounds */
+                --text-main: #212121;
+                --text-light: #757575;
+                --bg-body: #f9f9f9;
+                --white: #ffffff;
+            }
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: "Poppins", sans-serif;
+                background-color: var(--bg-body);
+                color: var(--text-main);
+                overflow-x: hidden;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+                transition: 0.3s;
+            }
+            ul {
+                list-style: none;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+            }
+
+            .container {
+                max-width: 1350px;
+                margin: 0 auto;
+                padding: 0 15px;
+            }
+
+            /* ================= TOP BRANDING BAR ================= */
+            .top-branding {
+                background-color: var(--wk-dark-green);
+                color: white;
+                padding: 8px 0;
+                font-size: 13px;
+                font-weight: 600;
+                text-align: center;
+                letter-spacing: 1px;
+            }
+
+            /* ================= HEADER ================= */
+            header {
+                width: 100%;
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                background: white;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            }
+
+            .header-main {
+                padding: 15px 0;
+                background-color: var(--wk-green);
+            }
+
+            .header-wrapper {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 20px;
+            }
+
+            /* Logo Area */
+            .logo-text {
+                font-size: 28px;
+                font-weight: 800;
+                color: white;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+            .logo-text span {
+                color: var(--wk-yellow);
+            }
+
+            /* Search Bar */
+            .header-search-container {
+                flex: 1;
+                position: relative;
+                max-width: 600px;
+            }
+
+            .search-field {
+                width: 100%;
+                padding: 12px 20px;
+                border-radius: 5px;
+                border: none;
+                font-size: 14px;
+                outline: none;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .search-btn {
+                position: absolute;
+                right: 5px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: var(--wk-orange);
+                color: white;
+                border: none;
+                width: 35px;
+                height: 35px;
+                border-radius: 4px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* Header Icons */
+            .header-actions {
+                display: flex;
+                align-items: center;
+                gap: 25px;
+                color: white;
+            }
+
+            .sell-btn {
+                background: var(--wk-blue);
+                color: white;
+                padding: 8px 18px;
+                border-radius: 4px;
+                font-weight: 600;
+                font-size: 13px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+            .sell-btn:hover {
+                background: #1565c0;
+            }
+
+            .action-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 12px;
+                cursor: pointer;
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .action-item:hover {
+                color: white;
+                transform: scale(1.05);
+            }
+            .action-item ion-icon {
+                font-size: 24px;
+                margin-bottom: 2px;
+            }
+
+            /* ================= SUB-NAVBAR ================= */
+            .sub-navbar {
+                background: white;
+                border-bottom: 1px solid #eee;
+            }
+
+            .nav-list {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                padding: 12px 0;
+                flex-wrap: wrap;
+            }
+
+            .nav-item a {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 14px;
+                font-weight: 500;
+                color: #444;
+                padding: 5px 10px;
+                border-radius: 20px;
+            }
+
+            /* Active State for Groceries */
+            .nav-item a:hover,
+            .nav-item a.active {
+                background-color: var(--wk-light-green);
+                color: var(--wk-green);
+            }
+
+            .nav-icon {
+                width: 22px;
+                height: 22px;
+                object-fit: contain;
+            }
+
+            /* Mobile Toggle */
+            .menu-toggle {
+                display: none;
+                font-size: 28px;
+                color: white;
+                cursor: pointer;
+            }
+
+            /* ================= CATEGORY BANNER (FRESH THEME) ================= */
+            .category-banner {
+                background: linear-gradient(135deg, #fbc02d 0%, #f57f17 100%);
+                padding: 40px 0;
+                color: #212121;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .category-banner h1 {
+                font-size: 36px;
+                font-weight: 800;
+                margin-bottom: 10px;
+                color: #212121;
+            }
+
+            .category-banner p {
+                font-size: 16px;
+                font-weight: 500;
+                opacity: 0.9;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            /* ================= GROCERY CATEGORIES (CIRCLES) ================= */
+            .grocery-categories {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                margin-bottom: 40px;
+                flex-wrap: wrap;
+            }
+
+            .cat-circle {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            .cat-circle:hover {
+                transform: translateY(-5px);
+            }
+
+            .cat-img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background: white;
+                border: 2px solid var(--wk-light-green);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+                margin-bottom: 10px;
+                overflow: hidden;
+            }
+
+            .cat-img img {
+                width: 60%;
+                object-fit: contain;
+            }
+
+            .cat-name {
+                font-weight: 600;
+                font-size: 14px;
+                color: var(--text-main);
+            }
+
+            /* ================= PRODUCTS LAYOUT (GRID) ================= */
+            .section-container {
+                max-width: 1350px;
+                margin: 0 auto 50px auto;
+                padding: 0 15px;
+            }
+
+            .section-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+                border-bottom: 2px solid #e0e0e0;
+                padding-bottom: 10px;
+            }
+
+            .section-title {
+                font-size: 22px;
+                font-weight: 700;
+                color: var(--text-main);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .view-all {
+                color: var(--wk-green);
+                font-weight: 600;
+                font-size: 14px;
+            }
+
+            .product-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 25px;
+            }
+
+            .product-card {
+                background: white;
+                border-radius: 12px;
+                padding: 15px;
+                border: 1px solid #f0f0f0;
+                position: relative;
+                transition: 0.3s;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .product-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+                border-color: var(--wk-green);
+            }
+
+            .badge {
+                position: absolute;
+                top: 12px;
+                left: 12px;
+                background: var(--wk-green);
+                color: white;
+                font-size: 10px;
+                font-weight: 700;
+                padding: 4px 10px;
+                border-radius: 4px;
+                z-index: 2;
+            }
+
+            .discount {
+                position: absolute;
+                top: 12px;
+                right: 12px;
+                background: var(--wk-orange);
+                color: white;
+                font-size: 10px;
+                font-weight: 700;
+                padding: 4px 8px;
+                border-radius: 4px;
+                z-index: 2;
+            }
+
+            .product-img {
+                height: 160px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 15px;
+                background: #fafafa;
+                border-radius: 8px;
+            }
+
+            .product-img img {
+                max-height: 90%;
+                max-width: 90%;
+                object-fit: contain;
+                transition: 0.4s;
+                /* Placeholder filter to make tech images look distinct */
+                filter: hue-rotate(45deg) contrast(0.9);
+            }
+
+            .product-card:hover .product-img img {
+                transform: scale(1.08);
+            }
+
+            .product-info {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .product-info h3 {
+                font-size: 15px;
+                font-weight: 600;
+                margin-bottom: 5px;
+                color: var(--text-main);
+                display: -webkit-box;
+                line-clamp: 2;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .unit-info {
+                color: #999;
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+
+            .price-box {
+                display: flex;
+                align-items: baseline;
+                gap: 8px;
+                margin-bottom: 15px;
+                margin-top: auto;
+            }
+
+            .price-curr {
+                font-size: 18px;
+                font-weight: 700;
+                color: var(--text-main);
+            }
+            .price-old {
+                font-size: 13px;
+                text-decoration: line-through;
+                color: #999;
+            }
+
+            .card-btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+                width: 100%;
+                padding: 8px;
+                background: white;
+                color: var(--wk-green);
+                border: 1px solid var(--wk-green);
+                text-align: center;
+                border-radius: 6px;
+                font-weight: 600;
+                font-size: 13px;
+                transition: 0.3s;
+            }
+
+            .card-btn:hover {
+                background: var(--wk-green);
+                color: white;
+            }
+
+            /* ================= FOOTER ================= */
+            footer {
+                background: #263238;
+                color: #cfd8dc;
+                padding-top: 60px;
+            }
+
+            .footer-wrapper {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 40px;
+                padding-bottom: 40px;
+            }
+
+            .footer-col h3 {
+                color: white;
+                font-size: 18px;
+                margin-bottom: 20px;
+                position: relative;
+                display: inline-block;
+            }
+            .footer-col h3::after {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 40px;
+                height: 3px;
+                background: var(--wk-green);
+            }
+
+            .footer-links li {
+                margin-bottom: 12px;
+            }
+            .footer-links a {
+                color: #b0bec5;
+                font-size: 14px;
+            }
+            .footer-links a:hover {
+                color: var(--wk-green);
+                padding-left: 5px;
+            }
+
+            .footer-bottom {
+                background: #1c252a;
+                text-align: center;
+                padding: 20px 0;
+                border-top: 1px solid #37474f;
+                font-size: 14px;
+            }
+
+            /* Mobile Menu */
+            .mobile-menu {
+                display: none;
+                background: white;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                padding: 10px 0;
+                z-index: 999;
+            }
+            .mobile-menu.show {
+                display: block;
+            }
+            .mobile-menu a {
+                display: block;
+                padding: 12px 20px;
+                border-bottom: 1px solid #f1f1f1;
+                font-weight: 500;
+                color: #444;
+            }
+
+            @media (max-width: 900px) {
+                .header-search-container {
+                    display: none;
+                }
+                .nav-list {
+                    display: none;
+                }
+                .menu-toggle {
+                    display: block;
+                }
+                .grocery-categories {
+                    gap: 15px;
+                }
+                .cat-img {
+                    width: 70px;
+                    height: 70px;
+                }
+                .cat-name {
+                    font-size: 12px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- TOP BRANDING BAR -->
+        <div class="top-branding">
+            FRESH GROCERIES DELIVERED IN 10 MINUTES - WINKELKART
+        </div>
+
+        <!-- HEADER -->
+        <header>
+            <div class="header-main">
+                <div class="container header-wrapper">
+                    <!-- Logo -->
+                    <a href="index.html" class="logo-text">
+                        Winkel<span>Kart</span>
+                    </a>
+
+                    <!-- Search Bar -->
+                    <div class="header-search-container">
+                        <input
+                            type="text"
+                            class="search-field"
+                            placeholder="Search for Vegetables, Fruits, Daily Needs..."
+                        />
+                        <button class="search-btn">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </button>
+                    </div>
+
+                    <!-- Right Actions -->
+                    <div class="header-actions">
+                        <a href="register.html" class="sell-btn"
+                            >Sell With Us</a
+                        >
+                        <a href="#" class="action-item"
+                            ><ion-icon name="heart-outline"></ion-icon
+                            ><span>Wishlist</span></a
+                        >
+                        <a href="#" class="action-item"
+                            ><ion-icon name="cart-outline"></ion-icon
+                            ><span>Cart</span></a
+                        >
+                        <a href="createacc.html" class="action-item"
+                            ><ion-icon name="person-circle-outline"></ion-icon
+                            ><span>Account</span></a
+                        >
+                        <div class="menu-toggle" id="menu-toggle">
+                            <ion-icon name="menu-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUB NAVBAR -->
+            <div class="sub-navbar">
+                <div class="container">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="computers.html">
+                                <img
+                                    src="./assets/images/icons/dealzone.png"
+                                    class="nav-icon"
+                                    alt=""
+                                />
+                                Computers
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="Electronics.html">
+                                <img
+                                    src="./assets/images/icons/elec.png"
+                                    class="nav-icon"
+                                    alt=""
+                                />
+                                Electronics
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- Active Class for Groceries -->
+                            <a href="Mobile.html" class="active">
+                                <img
+                                    src="./assets/images/icons/babystore.png"
+                                    class="nav-icon"
+                                    alt=""
+                                />
+                                Groceries
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="Hotels&Resorts.html">
+                                <img
+                                    src="./assets/images/icons/home.png"
+                                    class="nav-icon"
+                                    alt=""
+                                />
+                                Hotels & Resorts
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">
+                                <img
+                                    src="./assets/images/icons/icons8-shirt-50.png"
+                                    class="nav-icon"
+                                    alt=""
+                                />
+                                Fashion
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Container -->
+            <div class="mobile-menu" id="mobile-menu">
+                <a href="index.html">Home</a>
+                <a href="computers.html">Computers & Laptops</a>
+                <a href="Electronics.html">Electronics</a>
+                <a href="Groceries.html">Groceries</a>
+                <a href="Hotels&Resorts.html">Hotels & Resorts</a>
+                <a href="register.html">Sell on WinkelKart</a>
+            </div>
+        </header>
+
+        <!-- CATEGORY BANNER -->
+        <div class="category-banner">
+            <div class="container">
+                <h1>Farm Fresh & Daily Essentials</h1>
+                <p>
+                    Quality you can trust, prices you'll love. Delivered
+                    straight to your kitchen.
+                </p>
+            </div>
+        </div>
+
+        <!-- GROCERY CATEGORIES CIRCLES -->
+        <div class="container grocery-categories">
+            <div class="cat-circle">
+                <div class="cat-img">
+                    <img src="./assets/images/icons/babystore.png" alt="Veg" />
+                </div>
+                <span class="cat-name">Vegetables</span>
+            </div>
+            <div class="cat-circle">
+                <div class="cat-img">
+                    <img src="./assets/images/icons/all.png" alt="Fruits" />
+                </div>
+                <span class="cat-name">Fruits</span>
+            </div>
+            <div class="cat-circle">
+                <div class="cat-img">
+                    <img
+                        src="./assets/images/logo/wonderchef.png"
+                        alt="Cooking"
+                    />
+                </div>
+                <span class="cat-name">Oils & Masala</span>
+            </div>
+            <div class="cat-circle">
+                <div class="cat-img">
+                    <img src="./assets/images/icons/home.png" alt="Household" />
+                </div>
+                <span class="cat-name">Household</span>
+            </div>
+            <div class="cat-circle">
+                <div class="cat-img">
+                    <img src="./assets/images/logo/maharaja.jpg" alt="Snacks" />
+                </div>
+                <span class="cat-name">Snacks</span>
+            </div>
+        </div>
+
+        <!-- SECTION 1: DAILY STAPLES -->
+        <section class="section-container">
+            <div class="section-header">
+                <h3 class="section-title">
+                    <ion-icon
+                        name="nutrition-outline"
+                        style="color:var(--wk-orange); margin-right:10px;"
+                    ></ion-icon>
+                    Daily Staples
+                </h3>
+                <a href="#" class="view-all">View All &rarr;</a>
+            </div>
+
+            <div class="product-grid">
+                <!-- Item 1 -->
+                <div class="product-card">
+                    <span class="badge">Bestseller</span>
+                    <div class="product-img">
+                        <!-- Using placeholder generic images -->
+                        <img
+                            src="assets/images/products/mobile4.jpg"
+                            style="filter:grayscale(100%) brightness(1.2);"
+                            alt="Rice"
+                        />
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Basmati Rice</h3>
+                        <p class="unit-info">5 kg Pack</p>
+                        <div class="price-box">
+                            <span class="price-curr">₹550</span>
+                            <span class="price-old">₹700</span>
+                        </div>
+                        <a href="#" class="card-btn">ADD TO CART</a>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="product-card">
+                    <span class="discount">-10%</span>
+                    <div class="product-img">
+                        <img
+                            src="assets/images/logo/wonderchef.png"
+                            style="filter:none;"
+                            alt="Oil"
+                        />
+                    </div>
+                    <div class="product-info">
+                        <h3>Healthy Sunflower Oil</h3>
+                        <p class="unit-info">1 L Pouch</p>
+                        <div class="price-box">
+                            <span class="price-curr">₹145</span>
+                            <span class="price-old">₹180</span>
+                        </div>
+                        <a href="#" class="card-btn">ADD TO CART</a>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img
+                            src="assets/images/products/mobile2.jpg"
+                            style="filter:sepia(100%);"
+                            alt="Atta"
+                        />
+                    </div>
+                    <div class="product-info">
+                        <h3>Whole Wheat Atta</h3>
+                        <p class="unit-info">10 kg Bag</p>
+                        <div class="price-box">
+                            <span class="price-curr">₹380</span>
+                            <span class="price-old">₹450</span>
+                        </div>
+                        <a href="#" class="card-btn">ADD TO CART</a>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img
+                            src="assets/images/products/mobile1.jpg"
+                            style="filter:hue-rotate(90deg);"
+                            alt="Dal"
+                        />
+                    </div>
+                    <div class="product-info">
+                        <h3>Organic Toor Dal</h3>
+                        <p class="unit-info">1 kg Pack</p>
+                        <div class="price-box">
+                            <span class="price-curr">₹160</span>
+                            <span class="price-old">₹200</span>
+                        </div>
+                        <a href="#" class="card-btn">ADD TO CART</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: SNACKS & BEVERAGES -->
+        <section class="section-container">
+            <div class="section-header">
+                <h3 class="section-title">
+                    <ion-icon
+                        name="cafe-outline"
+                        style="color:var(--wk-green); margin-right:10px;"
+                    ></ion-icon>
+                    Snacks & Beverages
+                </h3>
+                <a href="#" class="view-all">View All &rarr;</a>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img
+                            src="assets/images/logo/maharaja.jpg"
+                            style="filter:none;"
+                            alt="Biscuits"
+                        />
+                    </div>
+                    <div class="product-info">
+                        <h3>Digestive Biscuits</h3>
+                        <p class="unit-info">Pack of 2</p>
+                        <div class="price-box">
+                            <span class="price-curr">₹60</span>
+                            <span class="price-old">₹80</span>
+                        </div>
+                        <a href="#" class="card-btn">ADD TO CART</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <span class="badge">New</span>
+                    <div class="product-img">
+                        <img
+                            src="assets/images/Adobe Express - file.png"
+                            style="filter:none;"
+                            alt="Chips"
+                        />
+                    </div>
+                    <div class="product-info">
+                        <h3>Potato Chips - Salted</h3>
+                        <p class="unit-info">Large Pack</p>
+                        <div class="price-box">
+                            <span class="price-curr">₹40</span>
+                            <span class="price-old">₹50</span>
+                        </div>
+                        <a href="#" class="card-btn">ADD TO CART</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img">
+                        <img
+                            src="assets/images/products/mobile5.jpg"
+                            style="filter:blur(1px) contrast(200%);"
+                            alt="Cola"
+                        />
+                    </div>
+                    <div class="product-info">
+                        <h3>Soft Drink - Cola</h3>
+                        <p class="unit-info">2.5 L Bottle</p>
+                        <div class="price-box">
+                            <span class="price-curr">₹90</span>
+                            <span class="price-old">₹99</span>
+                        </div>
+                        <a href="#" class="card-btn">ADD TO CART</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <span class="discount">-5%</span>
+                    <div class="product-img">
+                        <img
+                            src="assets/images/logo/wonderchef.png"
+                            style="filter:hue-rotate(180deg);"
+                            alt="Juice"
+                        />
+                    </div>
+                    <div class="product-info">
+                        <h3>Real Fruit Juice - Mixed</h3>
+                        <p class="unit-info">1 L Tetrapack</p>
+                        <div class="price-box">
+                            <span class="price-curr">₹110</span>
+                            <span class="price-old">₹130</span>
+                        </div>
+                        <a href="#" class="card-btn">ADD TO CART</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="container footer-wrapper">
+                <div class="footer-col">
+                    <h3>WinkelKart</h3>
+                    <p style="font-size:14px; line-height:1.6; color:#b0bec5;">
+                        India's most trusted online shopping destination. From
+                        high-end electronics to fresh groceries and luxury
+                        stays, we have it all.
+                    </p>
+                    <div style="margin-top:20px; display:flex; gap:10px;">
+                        <ion-icon
+                            name="logo-facebook"
+                            style="font-size:24px; color:white;"
+                        ></ion-icon>
+                        <ion-icon
+                            name="logo-instagram"
+                            style="font-size:24px; color:white;"
+                        ></ion-icon>
+                        <ion-icon
+                            name="logo-twitter"
+                            style="font-size:24px; color:white;"
+                        ></ion-icon>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="computers.html">Computers</a></li>
+                        <li><a href="Electronics.html">Electronics</a></li>
+                        <li><a href="Mobile.html">Groceries</a></li>
+                        <li>
+                            <a href="Hotels&Resorts.html">Hotels & Resorts</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>For Business</h3>
+                    <ul class="footer-links">
+                        <li><a href="register.html">Sell on WinkelKart</a></li>
+                        <li><a href="#">GST Compliance</a></li>
+                        <li><a href="#">Vendor Login</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li style="color:#b0bec5; font-size:14px;">
+                            <ion-icon
+                                name="location"
+                                style="vertical-align:middle; margin-right:5px;"
+                            ></ion-icon>
+                            SRD Technologies, Kulsum Complex, West Bengal
+                        </li>
+                        <li>
+                            <a href="tel:6294693931">
+                                <ion-icon
+                                    name="call"
+                                    style="vertical-align:middle; margin-right:5px;"
+                                ></ion-icon>
+                                +91 6294693931
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@winkelkart.com">
+                                <ion-icon
+                                    name="mail"
+                                    style="vertical-align:middle; margin-right:5px;"
+                                ></ion-icon>
+                                info@winkelkart.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <p>
+                        &copy; 2026 WinkelKart. All Rights Reserved. Designed by
+                        SRD Techno.
+                    </p>
+                    <img
+                        src="./assets/images/payment.png"
+                        alt=""
+                        style="max-height:30px; margin:10px auto; opacity:0.6;"
+                    />
+                </div>
+            </div>
+        </footer>
+
+        <!-- MOBILE MENU SCRIPT -->
+        <script>
+            const menuToggle = document.getElementById("menu-toggle");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            menuToggle.addEventListener("click", () => {
+                mobileMenu.classList.toggle("show");
+            });
+        </script>
+    </body>
+</html>

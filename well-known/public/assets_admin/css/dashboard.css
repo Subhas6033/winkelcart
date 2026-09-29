@@ -1,0 +1,22 @@
+.card-header.listing {
+    cursor: pointer;
+}
+
+.card-body.listing {
+    height: 0px;
+    transition: all 0.3s ease 0s;
+}
+
+.card-body.listing.show {
+    height: 100%;
+
+}
+
+.arrowIcon {
+    transition: all 0.3s ease 0s;
+}
+
+.arrowIcon.show {
+    transform: rotate(180deg);
+
+}

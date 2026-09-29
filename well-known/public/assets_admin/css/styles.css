@@ -1,0 +1,105 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600;700&display=swap');
+
+.dontprint {
+	display: none;
+	}
+	
+	.del-icon-btn {
+	background: none;
+	padding: 0px;
+	border: none;
+	}
+	
+	.error {
+	color: red !important;
+	font-size: 13px !important;
+	}
+	
+	.error {
+	color: red !important;
+	font-size: 13.5px !important;
+	}
+	
+	.delete-icon {
+	border: white;
+	background-color: white;
+	width: 21px;
+	padding-left: 3px;
+	}
+	
+	.nav-link {
+	color: #fff !important;
+	transition: all 0.3s ease 0s !important;
+	background: transparent !important;
+	}
+	
+	.nav-link:hover {
+	transform: scale(1.1);
+	}
+	
+	.sidebar-collapse .nav-sidebar .nav-link span {
+	display: none;
+	}
+	
+	.content-wrapper,
+	.content-wrapper.footer {
+	min-height: auto !important;
+	}
+	
+	.searchBar {
+	overflow: hidden;
+	}
+	
+	.table th,
+	.table td {
+	white-space: normal;
+	}
+	
+	body .logo {
+	/* display: block; */
+	margin: 0px auto;
+	width: 150px;
+	transition: all 0.3s ease 0s;
+	}
+	
+	body .logoSq {
+	/* display: none !important; */
+	margin: 0px auto;
+	width: 0px;
+	transition: all 0.3s ease 0s;
+	}
+	
+	body.sidebar-collapse .logo {
+	/* display: none; */
+	width: 0;
+	}
+	
+	body.sidebar-collapse .logoSq {
+	width: 40px;
+	}
+	
+	.wrapper {
+	overflow-y: scroll;
+	}
+	
+	.wrapper::-webkit-scrollbar {
+	display: none;
+	}
+	
+	.navbar-search {
+	transform: none !important;
+	}
+	
+	
+	.nav-item.active .nav-link {
+	box-shadow: 0px 0px 10px 0px #fff;
+	}
+/* ========================= Winkel */
+.mar-left{
+    margin-left: 4em !important;
+  }
+
+  .required-red{
+	color: red;
+  }

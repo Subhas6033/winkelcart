@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winkel - Own Shopperstop</title>
+
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo/Winkel_Shop__2_-removebg-preview.png" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+ <link rel="stylesheet" href="./assets/css/style-prefix.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+<!-- font awosome-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<!--<body>-->
+
+<body style="background-color:hsl(111, 8%, 83%);">
+
+
+  <!-- <div class="overlay" data-overlay></div>
+  283 100% 96.2% ........283 100% 93.4%-->
+
+  <!--
+    - MODAL
+  -->
+<!--
+  <div class="modal" data-modal>
+
+    <div class="modal-close-overlay" data-modal-overlay></div>
+
+    <div class="modal-content">
+
+      <button class="modal-close-btn" data-modal-close>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+      <div class="newsletter-img">
+        <img src="./assets/images/newsletter.png" alt="subscribe newsletter" width="400" height="400">
+      </div>
+
+      <div class="newsletter">
+
+        <form action="#">
+
+          <div class="newsletter-header">
+
+            <h3 class="newsletter-title">Subscribe Newsletter.</h3>
+
+            <p class="newsletter-desc">
+              Subscribe the <b>Winkel</b> to get latest products and discount update.
+            </p>
+
+          </div>
+
+          <input type="email" name="email" class="email-field" placeholder="Email Address" required>
+
+          <button type="submit" class="btn-newsletter">Subscribe</button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+-->
+
+
+
+  <!--
+    - NOTIFICATION TOAST
+  -->
+<!--
+  <div class="notification-toast" data-toast>
+
+    <button class="toast-close-btn" data-toast-close>
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+
+    <div class="toast-banner">
+      <img src="./assets/images/products/jewellery-1.jpg" alt="Rose Gold Earrings" width="80" height="70">
+    </div>
+
+    <div class="toast-detail">
+
+      <p class="toast-message">
+        Someone in new just bought
+      </p>
+
+      <p class="toast-title">
+        Rose Gold Earrings
+      </p>
+
+      <p class="toast-meta">
+        <time datetime="PT2M">2 Minutes</time> ago
+      </p>
+
+    </div>
+
+  </div>
+
+-->
+
+
+
+  <!--
+    - HEADER
+  -->
+
+  <header >
+
+   <marquee width="100%" height="30%"><P style="color:red;">FREEDOM SALE UPTO 80% OFF</P></marquee>  
+
+   <!-- <div class="header-main" style="background-color:hsl(28 100% 92.9%);" >-->
+    
+  <div class="container">
+
+        <a href="#" class="header-logo">
+          <img src="./assets/images/logo/Winkel_Shop__2_-removebg-preview.png" alt="Winkel's logo" width="200" height="200">
+        </a>
+
+     <div class="header-search-container">
+
+          <input type="search" name="search" class="search-field" placeholder="Enter your product name...">
+
+          <button class="search-btn">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+
+        </div>
+  <!-- 
+        <div class="header-user-actions">
+
+          <button class="action-btn">
+            <ion-icon name="person-outline"></ion-icon>
+          </button>
+
+          <button class="action-btn">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span class="count">0</span>
+          </button>
+
+          <button class="action-btn">
+            <ion-icon name="bag-handle-outline"></ion-icon>
+            <span class="count">0</span>
+          </button>
+
+        </div>-->
+
+  <!--    </div>-->
+
+  <!-- MOBILE MENU NAV HTML-->
+    
+    <nav>
+       <div class="mobile-menu" id="mobile-menu">
+      <div class="container">
+        
+        <ul class="desktop-menu-category-list">
+          
+            <li class="menu-category" style="list-style-image:url('./assets/images/icons/all.png')"> 
+         <a href="index.html" class="menu-title">Home</a>
+          </li>
+          <li class="menu-category" style="list-style-image:url('./assets/images/icons/dealzone.png')">
+            <a href="index.html" class="menu-title">Hot Deals</a>
+          </li>
+          <li class="menu-category" style="list-style-image:url('./assets/images/icons/elec.png')">
+            <a href="Electronics.html" class="menu-title">Electronics</a>
+          </li>
+          <li class="menu-category" style="list-style-image:url('./assets/images/icons/mobile.png')">
+            <a href="Mobile.html" class="menu-title">Mobile & Computers</a>
+          </li>
+          <li class="menu-category" style="list-style-image:url('./assets/images/icons/home.png')">
+            <a href="Hotels&Resorts.html" class="menu-title">Hotel and resort</a>
+          </li>
+          <li class="menu-category" style="list-style-image:url('./assets/images/icons/icons8-contact-25.png')">
+            <a href="contact.html" class="menu-title">Contact</a>
+          </li>
+          <li class="menu-category" style="list-style-image:url('./assets/images/icons/icons8-rent-24.png')">
+            <a href="register.html" class="menu-title">Register Your Business</a>
+          </li>
+      </div>
+    </nav>
+  </div>
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+    </div>
+
+    <nav class="desktop-navigation-menu">
+
+      <div class="container">
+
+        <ul class="desktop-menu-category-list">
+            <li class="menu-category" style="list-style-image:url('./assets/images/icons/all.png')"> 
+         <a href="index.html" class="menu-title">Home</a>
+          </li>
+
+<li class="menu-category" style="list-style-image:url('./assets/images/icons/dealzone.png')">
+            <a href="index.html" class="menu-title">Hot Deals</a>
+            
+          <li class="menu-category" style="list-style-image:url('./assets/images/icons/elec.png')">
+            <a href="Electronics.html" class="menu-title">Electronics</a>
+
+            
+
+          <li class="menu-category" style="list-style-image:url('./assets/images/icons/mobile.png')">
+            <a href="Mobile.html" class="menu-title">Mobile & Computers</a>
+
+           
+          </li>
+
+          <li class="menu-category" style="list-style-image:url('./assets/images/icons/home.png')">
+            <a href="Hotels&Resorts.html" class="menu-title">Hotel and resort</a>
+          </li>
+          <li class="menu-category" style="list-style-image:url('./assets/images/icons/icons8-contact-25.png')">
+            <a href="contact.html" class="menu-title">Contact</a>
+
+           
+          </li>
+
+            <li class="menu-category" style="list-style-image:url('./assets/images/icons/icons8-rent-24.png')">
+            <a href="register.html" class="menu-title">Register Your Business</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </nav>
+
+    
+
+  </header>
+ 
+ 
+  <style>
+     /* Mobile Footer Styling */
+@media (max-width: 768px) {
+  .footer-nav .container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color: #1c1c1c;
+  }
+
+  .footer-nav-list {
+    border-bottom: 1px solid #333;
+    padding: 10px 0;
+  }
+
+  .nav-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  .footer-links {
+    display: none;
+    margin-top: 8px;
+  }
+
+  .footer-links a {
+    display: block;
+    font-size: 14px;
+    color: #bbb;
+    text-decoration: none;
+    margin-bottom: 6px;
+  }
+
+  .footer-links a:hover {
+    color: #ff9500;
+  }
+
+  /* Active (Expanded) */
+  .footer-nav-list.active .footer-links {
+    display: block;
+  }
+
+  /* Footer Bottom */
+  .footer-bottom {
+    background-color: #141414;
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid #333;
+  }
+
+  .footer-bottom .payment-img {
+    max-width: 200px;
+    margin-bottom: 10px;
+  }
+
+  .footer-bottom .copyright {
+    font-size: 13px;
+    color: #bbb;
+  }
+
+  .footer-bottom .copyright a {
+    color: #ff9500;
+    text-decoration: none;
+  }
+}
+
+    /* MOBILE NAV BTNS CSS*/
+
+.mobile-menu {
+  display: none; /* Initially hidden */
+  flex-direction: column;
+  background: #222;
+  padding: 1rem;
+}
+
+.mobile-menu.show {
+  display: flex; /* Shown when "show" class is added */
+}
+     body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* ========= TOP BANNER ========= */
+    .top-banner {
+      background: white;
+      color: red;
+      text-align: right;
+      padding: 0.5rem 2rem;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    /* ========= HEADER ========= */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #222;
+      color: white;
+      padding: 1rem;
+      position: relative;
+      z-index: 100;
+    }
+
+    .header img {
+      height: 80px;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      color: #d72b2b;
+      margin-top: 0.3rem;
+    }
+
+    .search-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .search-box {
+      width: 60%;
+      display: flex;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      overflow: hidden;
+    }
+
+    .search-box input {
+      flex: 1;
+      padding: 0.7rem;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    .search-box button {
+      background: white;
+      border: none;
+      padding: 0 1rem;
+      cursor: pointer;
+    }
+
+    .menu-category {
+      vertical-align: middle;
+      font-size: 20px;
+    }
+
+    /* ========= NAVIGATION BAR (DESKTOP) ========= */
+    nav.desktop-nav {
+      background: #222;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0.5rem 1rem;
+      gap: 1.5rem;
+    }
+
+    nav.desktop-nav a {
+      color: white;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    nav.desktop-nav a:hover {
+      color: #4caf50;
+    }
+
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      position: absolute;
+      top:0;
+      left: 10;
+      transform: ;
+      cursor: pointer;
+      z-index: 9999;
+    }
+    
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background:transparent;
+      color: white;
+      padding: 20px;
+      position:absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+    }
+
+    .mobile-menu.show {
+      display: flex;
+    }
+
+    
+
+    .mobile-menu nav {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .mobile-menu nav a {
+      color: white;
+      display: inline-block;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 1rem;
+      padding: 4px 0;
+    }
+
+  
+    .main {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .main h1 {
+      font-size: 2.2rem;
+      color: #1e3dd3;
+    }
+
+    .main h2 {
+      font-size: 2.5rem;
+      color: #ff6600;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      nav.desktop-nav {
+        display: none;
+      }
+
+      .search-container {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+   @media (min-width: 769px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+    /*new banner*/
+   
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background-color: #f9f9f9;
+    }
+
+    .stay-section {
+      position: relative;
+       max-width: 1330px;
+      margin: 30px auto;
+      overflow: hidden;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .stay-slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 15px;
+      padding-bottom: 10px;
+       max-width: 1330px;
+      margin: 30px auto;
+    }
+
+    .stay-card {
+      min-width: 180px;
+      height: 240px;
+      border-radius: 12px;
+      overflow: hidden;
+      flex-shrink: 0;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .stay-card:hover {
+      transform: scale(1.05);
+    }
+
+    .stay-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .stay-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.4);
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .slider-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: white;
+      border: none;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .left-button {
+      left: -15px;
+    }
+
+    .right-button {
+      right: -15px;
+    }
+
+    @media (max-width: 600px) {
+      .stay-card {
+        min-width: 140px;
+        height: 180px;
+      }
+    }
+
+     /* banner top*/
+   .main-banner {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 20px;
+  background-color:transparent;
+}
+
+.inner-banner {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.banner-card {
+  display: flex;
+  align-items: center;
+  background-color: #f6f6f6;
+  border-radius: 15px;
+ height: 105px;
+  width: 390px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+.banner-img{
+  width: fit-content;
+  height: fit-content;
+}
+
+.banner-img img{
+
+  width: 140px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-right: 10px;
+  margin-left:02px;
+display: block;
+
+
+}
+
+.banner-card .text {
+  font-family: Arial, sans-serif;
+}
+
+.banner-card h4 {
+  font-size: 15px;
+  margin: 0 0 8px;
+  color: #000;
+}
+
+.banner-card a {
+  font-size: 13px;
+  text-decoration: none;
+  color: #006ce4;
+  font-weight: bold;
+}
+  </style>
+</head>
+<body>
+
+   <!-- banner top-->
+<div class="main-banner">
+  <div class="inner-banner">
+    <!-- Banner 1 -->
+    <div class="banner-card">
+      <div class="banner-img">
+      <img src="assets/images/icons/top banner 1.jpg" alt="Stay 10 nights">
+      </div>
+      <div class="text">
+        <h4>Stay 10 nights, get 1<br>reward night</h4>
+        <a href="#">Search stays →</a>
+      </div>
+    </div>
+
+    <!-- Banner 2 -->
+    <div class="banner-card">
+      <div class="banner-img">
+      <img src="assets/images/icons/top banner 2.jpg" alt="Plans change">
+      </div>
+      <div class="text">
+        <h4>Plans change. Book a<br>stay with flexibility to<br>cancel at any time</h4>
+        <a href="#">Book now →</a>
+      </div>
+    </div>
+
+    <!-- Banner 3 -->
+    <div class="banner-card">
+      <div class="banner-img">
+      <img src="assets/images/icons/top banner 3.jpg" alt="Compare hotels">
+      </div>
+      <div class="text">
+        <h4>Compare hotels side-<br>by-side to find the<br>right one for you</h4>
+        <a href="#">Compare hotels →</a>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<!-- new banner-->
+<div class="stay-section">
+    <h2>Discover your new favourite stay</h2>
+
+    <button class="slider-button left-button" onclick="scrollSlider(-1)">❮</button>
+    <button class="slider-button right-button" onclick="scrollSlider(1)">❯</button>
+
+    <div class="stay-slider" id="staySlider">
+      <a class="stay-card" href="#">
+        <img src="assets/images/products/hotels11.jpg" alt="Resort">
+        <div class="stay-label">Resort</div>
+      </a>
+      <a class="stay-card" href="#">
+        <img src="assets/images/products/hotels22.jpg" alt="Apart hotel">
+        <div class="stay-label">Apart hotel</div>
+      </a>
+      <a class="stay-card" href="#">
+        <img src="assets/images/products/hotels33.jpg" alt="Apartment">
+        <div class="stay-label">Apartment</div>
+      </a>
+      <a class="stay-card" href="#">
+        <img src="assets/images/products/hotels44.jpg" alt="Spa">
+        <div class="stay-label">Spa</div>
+      </a>
+      <a class="stay-card" href="#">
+        <img src="assets/images/products/hotels55.jpg" alt="Sea View">
+        <div class="stay-label">Sea view</div>
+      </a>
+      <a class="stay-card" href="#">
+        <img src="assets/images/products/hotels11.jpg" alt="Resort">
+        <div class="stay-label">Resort</div>
+      </a>
+      <a class="stay-card" href="#">
+        <img src="assets/images/products/hotels22.jpg" alt="Apart hotel">
+        <div class="stay-label">Apart hotel</div>
+      </a>
+      <a class="stay-card" href="#">
+        <img src="assets/images/products/hotels33.jpg" alt="Apartment">
+        <div class="stay-label">Apartment</div>
+      </a>
+      <a class="stay-card" href="#">
+        <img src="assets/images/products/hotels44.jpg" alt="Spa">
+        <div class="stay-label">Spa</div>
+      </a>
+      <a class="stay-card" href="#">
+        <img src="assets/images/products/hotels55.jpg" alt="Sea View">
+        <div class="stay-label">Sea view</div>
+      </a>
+      <!-- You can add more cards here -->
+    </div>
+  </div>
+
+  <script>
+    function scrollSlider(direction) {
+      const slider = document.getElementById("staySlider");
+      const scrollAmount = slider.offsetWidth / 2;
+      slider.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
+    }
+  </script>
+
+<!--
+    - FOOTER
+  -->
+
+  <footer>
+    
+    <div class="footer-nav">
+
+      <div class="container">
+
+        <ul class="footer-nav-list">
+  <li class="nav-title">Populer Categories</li>
+        
+          <div class="footer-links">
+    <a href="#" class="footer-nav-link">Fashion</a>
+    <a href="#" class="footer-nav-link">Electronic</a>
+    <a href="#" class="footer-nav-link">Cosmetic</a>
+    <a href="#" class="footer-nav-link">Health</a>
+    <a href="#" class="footer-nav-link">Watches</a>
+  </div>
+</ul>
+
+<ul class="footer-nav-list">
+  <li class="nav-title">Products</li>
+        
+          <div class="footer-links">
+    <a href="#" class="footer-nav-link">Prices drop</a>
+    <a href="#" class="footer-nav-link">New products</a>
+    <a href="#" class="footer-nav-link">Best sales</a>
+    <a href="#" class="footer-nav-link">Contact us</a>
+    <a href="#" class="footer-nav-link">Sitemap</a>
+  </div>
+</ul>
+        
+
+         <ul class="footer-nav-list">
+  <li class="nav-title">Our Company</li>
+        
+          <div class="footer-links">
+            <a href="#" class="footer-nav-link">Delivery</a>
+            <a href="#" class="footer-nav-link">Legal Notice</a>
+            <a href="#" class="footer-nav-link">Terms and conditions</a>
+            <a href="#" class="footer-nav-link">About us</a>
+            <a href="#" class="footer-nav-link">Secure payment</a>
+          </li>
+        
+        </ul>
+        
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Contact</h2>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <address class="content">
+              SRD TECHNOLOGIES INDIA
+              </br>
+             Kulsum Complex,Station More, Bagdogra,
+              Pin:734014,West Bengal
+            </address>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="call-outline"></ion-icon>
+            </div>
+
+            <a href="tel:+607936-8058" class="footer-nav-link">6294693931</a>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <a href="mailto:example@gmail.com" class="footer-nav-link">info@winkelkart.com</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Follow Us</h2>
+          </li>
+
+          <li>
+            <ul class="social-link">
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <div class="container">
+
+        <img src="./assets/images/payment.png" alt="payment method" class="payment-img">
+
+        <p class="copyright">
+          Copyright &copy; <a href="#">Winkel</a> all rights reserved.
+        </p>
+
+      </div>
+
+    </div>
+</div>
+  </footer>
+
+
+
+<!-- footer script-->
+ <script>
+  document.querySelectorAll('.nav-title').forEach(title => {
+    title.addEventListener('click', () => {
+      title.parentElement.classList.toggle('active');
+    });
+  });
+</script>
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<!--  SCRIPT  FOR MOBILE MENU NAV -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    toggleBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("show");
+      mobileMenu.style.display = mobileMenu.classList.contains("show") ? "flex" : "none";
+    });
+  });
+</script>
+
+ 
+
+</body>
+</html>

@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winkel - Own Shopperstop</title>
+
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo/Winkel_Shop__2_-removebg-preview.png" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+ <link rel="stylesheet" href="./assets/css/style-prefix.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+    <!-- font awosome-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<!--<body>-->
+
+<body style="background-color:hsl(111, 8%, 83%);">
+
+
+  <!-- <div class="overlay" data-overlay></div>
+  283 100% 96.2% ........283 100% 93.4%-->
+
+  <!--
+    - MODAL
+  -->
+<!--
+  <div class="modal" data-modal>
+
+    <div class="modal-close-overlay" data-modal-overlay></div>
+
+    <div class="modal-content">
+
+      <button class="modal-close-btn" data-modal-close>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+      <div class="newsletter-img">
+        <img src="./assets/images/newsletter.png" alt="subscribe newsletter" width="400" height="400">
+      </div>
+
+      <div class="newsletter">
+
+        <form action="#">
+
+          <div class="newsletter-header">
+
+            <h3 class="newsletter-title">Subscribe Newsletter.</h3>
+
+            <p class="newsletter-desc">
+              Subscribe the <b>Winkel</b> to get latest products and discount update.
+            </p>
+
+          </div>
+
+          <input type="email" name="email" class="email-field" placeholder="Email Address" required>
+
+          <button type="submit" class="btn-newsletter">Subscribe</button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+-->
+
+
+
+  <!--
+    - NOTIFICATION TOAST
+  -->
+<!--
+  <div class="notification-toast" data-toast>
+
+    <button class="toast-close-btn" data-toast-close>
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+
+    <div class="toast-banner">
+      <img src="./assets/images/products/jewellery-1.jpg" alt="Rose Gold Earrings" width="80" height="70">
+    </div>
+
+    <div class="toast-detail">
+
+      <p class="toast-message">
+        Someone in new just bought
+      </p>
+
+      <p class="toast-title">
+        Rose Gold Earrings
+      </p>
+
+      <p class="toast-meta">
+        <time datetime="PT2M">2 Minutes</time> ago
+      </p>
+
+    </div>
+
+  </div>
+
+-->
+
+
+
+  <!--
+    - HEADER
+  -->
+
+  <header >
+
+   
+
+   <!-- <div class="header-main" style="background-color:hsl(28 100% 92.9%);" >-->
+    
+  <div class="container">
+
+        <a href="#" class="header-logo">
+          <img src="./assets/images/logo/Winkel_Shop__2_-removebg-preview.png" alt="Winkel's logo" width="200" height="200">
+        </a>
+
+     <div class="header-search-container">
+
+          <input type="search" name="search" class="search-field" placeholder="Enter your product name...">
+
+          <button class="search-btn">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+
+        </div>
+  <!-- 
+        <div class="header-user-actions">
+
+          <button class="action-btn">
+            <ion-icon name="person-outline"></ion-icon>
+          </button>
+
+          <button class="action-btn">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span class="count">0</span>
+          </button>
+
+          <button class="action-btn">
+            <ion-icon name="bag-handle-outline"></ion-icon>
+            <span class="count">0</span>
+          </button>
+
+        </div>-->
+
+  <!--    </div>-->
+
+  <!-- MOBILE MENU NAV HTML-->
+    
+    <nav>
+       <div class="mobile-menu" id="mobile-menu">
+      <div class="container">
+        
+        <ul class="desktop-menu-category-list">
+          
+            <li class="menu-category" style="list-style-image:url('./assets/images/icons/all.png')"> 
+         <a href="index.html" class="menu-title">Home</a>
+          </li>
+          <li class="menu-category" style="list-style-image:url('./assets/images/icons/dealzone.png')">
+            <a href="index.html" class="menu-title">Hot Deals</a>
+          </li>
+          <li class="menu-category" style="list-style-image:url('./assets/images/icons/elec.png')">
+            <a href="Electronics.html" class="menu-title">Electronics</a>
+          </li>
+          <li class="menu-category" style="list-style-image:url('./assets/images/icons/mobile.png')">
+            <a href="Mobile.html" class="menu-title">Mobile & Computers</a>
+          </li>
+          <li class="menu-category" style="list-style-image:url('./assets/images/icons/home.png')">
+            <a href="Hotels&Resorts.html" class="menu-title">Hotel and resort</a>
+          </li>
+          <li class="menu-category" style="list-style-image:url('./assets/images/icons/icons8-contact-25.png')">
+            <a href="contact.html" class="menu-title">Contact</a>
+          </li>
+          <li class="menu-category" style="list-style-image:url('./assets/images/icons/icons8-rent-24.png')">
+            <a href="register.html" class="menu-title">Register Your Business</a>
+          </li>
+      </div>
+    </nav>
+  </div>
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+    </div>
+
+    <nav class="desktop-navigation-menu">
+
+      <div class="container">
+
+        <ul class="desktop-menu-category-list">
+            <li class="menu-category" style="list-style-image:url('./assets/images/icons/all.png')"> 
+         <a href="index.html" class="menu-title">Home</a>
+          </li>
+
+<li class="menu-category" style="list-style-image:url('./assets/images/icons/dealzone.png')">
+            <a href="index.html" class="menu-title">Hot Deals</a>
+            
+          <li class="menu-category" style="list-style-image:url('./assets/images/icons/elec.png')">
+            <a href="Electronics.html" class="menu-title">Electronics</a>
+
+            
+
+          <li class="menu-category" style="list-style-image:url('./assets/images/icons/mobile.png')">
+            <a href="Mobile.html" class="menu-title">Mobile & Computers</a>
+
+           
+          </li>
+
+          <li class="menu-category" style="list-style-image:url('./assets/images/icons/home.png')">
+            <a href="Hotels&Resorts.html" class="menu-title">Hotel and resort</a>
+
+           
+          </li>
+          <li class="menu-category" style="list-style-image:url('./assets/images/icons/icons8-contact-25.png')">
+            <a href="contact.html" class="menu-title">Contact</a>
+
+           
+          </li>
+          <li class="menu-category" style="list-style-image:url('./assets/images/icons/icons8-rent-24.png')">
+            <a href="register.html" class="menu-title">Register Your Business</a>
+          </li>
+
+
+        
+      </div>
+
+    </nav>
+
+   
+   
+
+   
+    <style>
+      /* Mobile Footer Styling */
+@media (max-width: 768px) {
+  .footer-nav .container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color: #1c1c1c;
+  }
+
+  .footer-nav-list {
+    border-bottom: 1px solid #333;
+    padding: 10px 0;
+  }
+
+  .nav-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  .footer-links {
+    display: none;
+    margin-top: 8px;
+  }
+
+  .footer-links a {
+    display: block;
+    font-size: 14px;
+    color: #bbb;
+    text-decoration: none;
+    margin-bottom: 6px;
+  }
+
+  .footer-links a:hover {
+    color: #ff9500;
+  }
+
+  /* Active (Expanded) */
+  .footer-nav-list.active .footer-links {
+    display: block;
+  }
+
+  /* Footer Bottom */
+  .footer-bottom {
+    background-color: #141414;
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid #333;
+  }
+
+  .footer-bottom .payment-img {
+    max-width: 200px;
+    margin-bottom: 10px;
+  }
+
+  .footer-bottom .copyright {
+    font-size: 13px;
+    color: #bbb;
+  }
+
+  .footer-bottom .copyright a {
+    color: #ff9500;
+    text-decoration: none;
+  }
+}
+
+      /* MOBILE NAV BTNS CSS*/
+
+.mobile-menu {
+  display: none; /* Initially hidden */
+  flex-direction: column;
+  background: #222;
+  padding: 1rem;
+}
+
+.mobile-menu.show {
+  display: flex; /* Shown when "show" class is added */
+}
+     body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* ========= TOP BANNER ========= */
+    .top-banner {
+      background: white;
+      color: red;
+      text-align: right;
+      padding: 0.5rem 2rem;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    /* ========= HEADER ========= */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #222;
+      color: white;
+      padding: 1rem;
+      position: relative;
+      z-index: 100;
+    }
+
+    .header img {
+      height: 80px;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      color: #d72b2b;
+      margin-top: 0.3rem;
+    }
+
+    .search-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .search-box {
+      width: 60%;
+      display: flex;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      overflow: hidden;
+    }
+
+    .search-box input {
+      flex: 1;
+      padding: 0.7rem;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    .search-box button {
+      background: white;
+      border: none;
+      padding: 0 1rem;
+      cursor: pointer;
+    }
+
+    .menu-category {
+      vertical-align: middle;
+      font-size: 20px;
+    }
+
+    /* ========= NAVIGATION BAR (DESKTOP) ========= */
+    nav.desktop-nav {
+      background: #222;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0.5rem 1rem;
+      gap: 1.5rem;
+    }
+
+    nav.desktop-nav a {
+      color: white;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    nav.desktop-nav a:hover {
+      color: #4caf50;
+    }
+
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      position: absolute;
+      top:0;
+      left: 10;
+      transform: ;
+      cursor: pointer;
+      z-index: 9999;
+    }
+    
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background:transparent;
+      color: white;
+      padding: 20px;
+      position:absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+    }
+
+    .mobile-menu.show {
+      display: flex;
+    }
+
+    
+
+    .mobile-menu nav {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .mobile-menu nav a {
+      color: white;
+      display: inline-block;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 1rem;
+      padding: 4px 0;
+    }
+
+  
+    .main {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .main h1 {
+      font-size: 2.2rem;
+      color: #1e3dd3;
+    }
+
+    .main h2 {
+      font-size: 2.5rem;
+      color: #ff6600;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      nav.desktop-nav {
+        display: none;
+      }
+
+      .search-container {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+   @media (min-width: 769px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+     
+        
+.brand-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+   
+    
+}
+
+/* Brand Cards */
+.brand-card {
+    width: 150px;
+    height: 190px;
+    background-color: #000;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.brand-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.brand-card img {
+    max-width: max-content;
+    max-height: max-content;
+    object-fit: contain;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Mobile View: Horizontal Swipe */
+@media (max-width: 768px) {
+    .brand-container {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 15px;
+        padding: 15px;
+        scroll-snap-type: x mandatory;
+    }
+
+    .brand-container::-webkit-scrollbar {
+        display: none; /* Hide scrollbar */
+    }
+
+    .brand-card {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+    }
+}
+
+        /*video banner*/
+
+           * {
+      box-sizing: border-box;
+    }
+
+    
+
+    .banner-container {
+       justify-content: center;
+      display: flex;
+      align-items: stretch; /* ensures equal height */
+      padding: 20px;
+      background-color: transparent;
+      gap: 20px;
+    }
+
+    .video-banner {
+      flex: 1;
+    }
+
+    .video-banner video {
+      width: 100%;
+      height: 100%;
+      max-height: 300px; /* control video height */
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .products-scroll {
+      flex: 2;
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      background-color:transparent;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .product {
+      min-width: 180px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .product img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+    }
+
+    .product-title {
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .rating {
+      font-size: 13px;
+      color: #f90;
+    }
+
+    .deal {
+      font-size: 12px;
+      color: red;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .banner-container {
+        flex-direction: column;
+      }
+
+      .video-banner video {
+        max-height: none;
+        height: auto;
+      }
+    }
+
+/*banner 2*/
+
+
+    
+
+    .product-image img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+      border-radius: 5px;
+      transition: transform 0.3s;
+    }
+
+    .product-image img:hover {
+      transform: scale(1.05);
+    }
+
+    
+
+    .add-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #fff;
+      border: 2px solid #ff3e6c;
+      color: #ff3e6c;
+      font-weight: bold;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-align: center;
+      width: 100%;
+    }
+
+    .add-btn:hover {
+      background-color: #ff3e6c;
+      color: #fff;
+    }
+    
+    .see-all-btn:hover {
+      color: #0056b3;
+    }
+
+    </style>
+
+   <div class="brand-container">
+
+        <a href="philips.html" class="brand-card">
+            <img src="assets/images/logo/philips.jpg" alt="Philips">
+        </a>
+
+        <a href="boat.html" class="brand-card">
+            <img src="assets/images/logo/boat.jpg" alt="boAt">
+        </a>
+
+        <a href="lifelong.html" class="brand-card">
+            <img src="assets/images/logo/lifelong.jpg" alt="Lifelong">
+        </a>
+
+        <a href="portronics.html" class="brand-card">
+            <img src="assets/images/logo/portronics.jpg" alt="Portronics">
+        </a>
+
+        <a href="wonderchef.html" class="brand-card">
+            <img src="assets/images/logo/wonderchef.png" alt="Wonderchef">
+        </a>
+
+        <a href="maharaja.html" class="brand-card">
+            <img src="assets/images/logo/maharaja.jpg" alt="Maharaja">
+        </a>
+
+        <a href="fireboltt.html" class="brand-card">
+            <img src="assets/images/logo/firebolt.png" alt="Fire Boltt">
+        </a>
+
+    </div>
+    
+  
+
+  
+ 
+  <!-- video banner -->
+   
+  <div class="banner-container">
+  <!-- Flexible Video Block -->
+  <div class="video-banner">
+    <video autoplay muted loop playsinline>
+      <source src="assets/images/videoplay.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+  </div>
+
+  <!-- Scrollable Product Items -->
+  <div class="products-scroll">
+    <a href="#" class="product">
+      <img src="assets/images/products/headphone3.jpg" alt="Q20i">
+      <div class="product-title">Soundcore Q20i</div>
+      <div class="rating">⭐ 4.3 (32,681)</div>
+    </a>
+
+    <a href="#" class="product">
+      <img src="assets/images/products/headphone5.jpg" alt="Space One">
+      <div class="product-title">Anker Space One</div>
+      <div class="rating">⭐ 3.9 (17,856)</div>
+    </a>
+
+    <a href="#" class="product">
+      <img src="assets/images/products/headphone6.jpg" alt="H30i">
+      <div class="product-title">Anker H30i</div>
+      <div class="rating">⭐ 4.1 (6,810)</div>
+
+    </a>
+     <a href="#" class="product">
+      <img src="assets/images/products/headphone7.jpg" alt="Q20i">
+      <div class="product-title">Soundcore Q20i</div>
+      <div class="rating">⭐ 4.3 (32,681)</div>
+    </a>
+
+    <a href="#" class="product">
+      <img src="assets/images/products/headphone8.jpg" alt="Space One">
+      <div class="product-title">Anker Space One</div>
+      <div class="rating">⭐ 3.9 (17,856)</div>
+    </a>
+
+    <a href="#" class="product">
+      <img src="assets/images/products/headphone2.jpg" alt="H30i">
+      <div class="product-title">Anker H30i</div>
+      <div class="rating">⭐ 4.1 (6,810)</div>
+      
+    </a>
+    
+  </div>
+  
+</div>
+
+
+<!-- new banner-->
+<!-- Scrollable Product Items -->
+ <div class="section-header">
+  <h2>Mobile Accessories</h2>
+  <a href="#" class="see-all-btn">See All</a>
+  </div>
+  <div class="products-scroll">
+    <div class="product-image">
+    <a href="https://wa.me/916296364278?text=I%20am%20interested%20in%20this%20product:%20Soundcore%20Q20i" target="_blank" class="product">
+      <img src="assets/images/products/boat pocket size2.jpg" alt="Q20i">
+      <div class="product-title">Soundcore Q20i</div>
+      <div class="rating">⭐ 4.3 (32,681)</div>
+      <div class="add-btn">
+      <i class="fab fa-whatsapp"></i>
+      <span>BUY</span>
+    </div>
+    </a>
+    </div>
+
+      <div class="product-image">
+    <a href="https://wa.me/916296364278?text=I%20am%20interested%20in%20this%20product:%20Soundcore%20Q20i" target="_blank" class="product">
+      <img src="assets/images/products/boat pocket size.jpg" alt="Space One">
+   
+      <div class="product-title">Anker Space One</div>
+      <div class="rating">⭐ 3.9 (17,856)</div>
+      <div class="add-btn">
+      <i class="fab fa-whatsapp"></i>
+      <span>BUY</span>
+    </div>
+    </a>
+     </div>
+<div class="product-image">
+    <a href="https://wa.me/916296364278?text=I%20am%20interested%20in%20this%20product:%20Soundcore%20Q20i" target="_blank" class="product">
+      <img src="assets/images/products/boat 10000mah.jpg" alt="H30i">
+      <div class="product-title">Anker H30i</div>
+      <div class="rating">⭐ 4.1 (6,810)</div>
+     
+     <div class="add-btn">
+      <i class="fab fa-whatsapp"></i>
+      <span>BUY</span>
+    </div>
+    </a>
+    </div>
+    <div class="product-image">
+    <a href="https://wa.me/916296364278?text=I%20am%20interested%20in%20this%20product:%20Soundcore%20Q20i" target="_blank" class="product">
+      <img src="assets/images/products/boat 10000mah.jpg" alt="Q20i">
+      <div class="product-title">Soundcore Q20i</div>
+      <div class="rating">⭐ 4.3 (32,681)</div>
+      <div class="add-btn">
+      <i class="fab fa-whatsapp"></i>
+      <span>BUY</span>
+    </div>
+    </a>
+    </div>
+<div class="product-image">
+    <a href="https://wa.me/916296364278?text=I%20am%20interested%20in%20this%20product:%20Soundcore%20Q20i" target="_blank" class="product">
+      <img src="assets/images/products/protronics 10000mah.jpg" alt="Space One">
+      <div class="product-title">Anker Space One</div>
+      <div class="rating">⭐ 3.9 (17,856)</div>
+      <div class="add-btn">
+      <i class="fab fa-whatsapp"></i>
+      <span>BUY</span>
+    </div>
+    </a>
+    </div>
+<div class="product-image">
+    <a href="https://wa.me/916296364278?text=I%20am%20interested%20in%20this%20product:%20Soundcore%20Q20i" target="_blank" class="product">
+      <img src="assets/images/products/boat pocket size3.jpg" alt="H30i">
+      <div class="product-title">Anker H30i</div>
+      <div class="rating">⭐ 4.1 (6,810)</div>
+     <div class="add-btn">
+      <i class="fab fa-whatsapp"></i>
+      <span>BUY</span>
+    </div>
+    </a>
+    </div>
+    <div class="product-image">
+    <a href="https://wa.me/916296364278?text=I%20am%20interested%20in%20this%20product:%20Soundcore%20Q20i" target="_blank" class="product">
+      <img src="assets/images/products/boat pocket size2.jpg" alt="Q20i">
+      <div class="product-title">Soundcore Q20i</div>
+      <div class="rating">⭐ 4.3 (32,681)</div>
+      <div class="add-btn">
+      <i class="fab fa-whatsapp"></i>
+      <span>BUY</span>
+    </div>
+    </a>
+    </div>
+
+      <div class="product-image">
+   <a href="https://wa.me/916296364278?text=I%20am%20interested%20in%20this%20product:%20Soundcore%20Q20i" target="_blank" class="product">
+      <img src="assets/images/products/boat pocket size.jpg" alt="Space One">
+   
+      <div class="product-title">Anker Space One</div>
+      <div class="rating">⭐ 3.9 (17,856)</div>
+      <div class="add-btn">
+      <i class="fab fa-whatsapp"></i>
+      <span>BUY</span>
+    </div>
+    </a>
+     </div>
+<div class="product-image">
+    <a href="https://wa.me/916296364278?text=I%20am%20interested%20in%20this%20product:%20Soundcore%20Q20i" target="_blank" class="product">
+      <img src="assets/images/products/boat 10000mah.jpg" alt="H30i">
+      <div class="product-title">Anker H30i</div>
+      <div class="rating">⭐ 4.1 (6,810)</div>
+     
+      <div class="add-btn">
+      <i class="fab fa-whatsapp"></i>
+      <span>BUY</span>
+    </div>
+    </a>
+    </div>
+
+    
+  </div>
+
+  <!-- new banner-->
+<!-- Scrollable Product Items -->
+
+ <div class="section-header">
+  <h2>Mobile Accessories</h2>
+  <a href="#" class="see-all-btn">See All</a>
+  </div>
+  <div class="products-scroll">
+    <div class="product-image">
+    <a href="https://wa.me/916296364278?text=I%20am%20interested%20in%20this%20product:%20Soundcore%20Q20i" target="_blank" class="product">
+      <img src="assets/images/products/headphone3.jpg" alt="Q20i">
+      <div class="product-title">Soundcore Q20i</div>
+      <div class="rating">⭐ 4.3 (32,681)</div>
+      <div class="add-btn">
+      <i class="fab fa-whatsapp"></i>
+      <span>BUY</span>
+    </div>
+    </a>
+    </div>
+
+      <div class="product-image">
+    <a href="https://wa.me/916296364278?text=I%20am%20interested%20in%20this%20product:%20Soundcore%20Q20i" target="_blank" class="product">
+      <img src="assets/images/products/headphone5.jpg" alt="Space One">
+   
+      <div class="product-title">Anker Space One</div>
+      <div class="rating">⭐ 3.9 (17,856)</div>
+      <div class="add-btn">
+      <i class="fab fa-whatsapp"></i>
+      <span>BUY</span>
+    </div>
+    </a>
+     </div>
+<div class="product-image">
+    <a href="https://wa.me/916296364278?text=I%20am%20interested%20in%20this%20product:%20Soundcore%20Q20i" target="_blank" class="product">
+      <img src="assets/images/products/headphone6.jpg" alt="H30i">
+      <div class="product-title">Anker H30i</div>
+      <div class="rating">⭐ 4.1 (6,810)</div>
+     
+      <div class="add-btn">
+      <i class="fab fa-whatsapp"></i>
+      <span>BUY</span>
+    </div>
+    </a>
+    </div>
+    <div class="product-image">
+     <a href="https://wa.me/916296364278?text=I%20am%20interested%20in%20this%20product:%20Soundcore%20Q20i" target="_blank" class="product">
+      <img src="assets/images/products/headphone8.jpg" alt="Q20i">
+      <div class="product-title">Soundcore Q20i</div>
+      <div class="rating">⭐ 4.3 (32,681)</div>
+      <div class="add-btn">
+      <i class="fab fa-whatsapp"></i>
+      <span>BUY</span>
+    </div>
+    </a>
+    </div>
+<div class="product-image">
+    <a href="https://wa.me/916296364278?text=I%20am%20interested%20in%20this%20product:%20Soundcore%20Q20i" target="_blank" class="product">
+      <img src="assets/images/products/headphone7.jpg" alt="Space One">
+      <div class="product-title">Anker Space One</div>
+      <div class="rating">⭐ 3.9 (17,856)</div>
+      <div class="add-btn">
+      <i class="fab fa-whatsapp"></i>
+      <span>BUY</span>
+    </div>
+    </a>
+    </div>
+<div class="product-image">
+    <a href="https://wa.me/916296364278?text=I%20am%20interested%20in%20this%20product:%20Soundcore%20Q20i" target="_blank" class="product">
+      <img src="assets/images/products/headphone1.jpg" alt="H30i">
+      <div class="product-title">Anker H30i</div>
+      <div class="rating">⭐ 4.1 (6,810)</div>
+      <div class="add-btn">
+      <i class="fab fa-whatsapp"></i>
+      <span>BUY</span>
+    </div>
+    </a>
+    </div>
+    <div class="product-image">
+    <a href="https://wa.me/916296364278?text=I%20am%20interested%20in%20this%20product:%20Soundcore%20Q20i" target="_blank" class="product">
+      <img src="assets/images/products/headphone4.jpg" alt="Q20i">
+      <div class="product-title">Soundcore Q20i</div>
+      <div class="rating">⭐ 4.3 (32,681)</div>
+      <div class="add-btn">
+      <i class="fab fa-whatsapp"></i>
+      <span>BUY</span>
+    </div>
+    </a>
+    </div>
+
+      <div class="product-image">
+    <a href="https://wa.me/916296364278?text=I%20am%20interested%20in%20this%20product:%20Soundcore%20Q20i" target="_blank" class="product">
+      <img src="assets/images/products/headphone2.jpg" alt="Space One">
+   
+      <div class="product-title">Anker Space One</div>
+      <div class="rating">⭐ 3.9 (17,856)</div>
+      <div class="add-btn">
+      <i class="fab fa-whatsapp"></i>
+      <span>BUY</span>
+    </div>
+    </a>
+     </div>
+<div class="product-image">
+     <a href="https://wa.me/916296364278?text=I%20am%20interested%20in%20this%20product:%20Soundcore%20Q20i" target="_blank" class="product">
+      <img src="assets/images/products/headphone6.jpg" alt="H30i">
+      <div class="product-title">Anker H30i</div>
+      <div class="rating">⭐ 4.1 (6,810)</div>
+    
+     <div class="add-btn">
+      <i class="fab fa-whatsapp"></i>
+      <span>BUY</span>
+    </div>
+    </a>
+    </div>
+
+ 
+  </header>
+
+
+<!--
+    - FOOTER
+  -->
+
+  <footer>
+    
+    <div class="footer-nav">
+
+      <div class="container">
+
+        <ul class="footer-nav-list">
+  <li class="nav-title">Populer Categories</li>
+        
+          <div class="footer-links">
+    <a href="#" class="footer-nav-link">Fashion</a>
+    <a href="#" class="footer-nav-link">Electronic</a>
+    <a href="#" class="footer-nav-link">Cosmetic</a>
+    <a href="#" class="footer-nav-link">Health</a>
+    <a href="#" class="footer-nav-link">Watches</a>
+  </div>
+</ul>
+
+<ul class="footer-nav-list">
+  <li class="nav-title">Products</li>
+        
+          <div class="footer-links">
+    <a href="#" class="footer-nav-link">Prices drop</a>
+    <a href="#" class="footer-nav-link">New products</a>
+    <a href="#" class="footer-nav-link">Best sales</a>
+    <a href="#" class="footer-nav-link">Contact us</a>
+    <a href="#" class="footer-nav-link">Sitemap</a>
+  </div>
+</ul>
+        
+
+         <ul class="footer-nav-list">
+  <li class="nav-title">Our Company</li>
+        
+          <div class="footer-links">
+            <a href="#" class="footer-nav-link">Delivery</a>
+            <a href="#" class="footer-nav-link">Legal Notice</a>
+            <a href="#" class="footer-nav-link">Terms and conditions</a>
+            <a href="#" class="footer-nav-link">About us</a>
+            <a href="#" class="footer-nav-link">Secure payment</a>
+          </li>
+        
+        </ul>
+        
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Contact</h2>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <address class="content">
+              SRD TECHNOLOGIES INDIA
+              </br>
+             Kulsum Complex,Station More, Bagdogra,
+              Pin:734014,West Bengal
+            </address>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="call-outline"></ion-icon>
+            </div>
+
+            <a href="tel:+607936-8058" class="footer-nav-link">6294693931</a>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <a href="mailto:example@gmail.com" class="footer-nav-link">info@winkelkart.com</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Follow Us</h2>
+          </li>
+
+          <li>
+            <ul class="social-link">
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <div class="container">
+
+        <img src="./assets/images/payment.png" alt="payment method" class="payment-img">
+
+        <p class="copyright">
+          Copyright &copy; <a href="#">Winkel</a> all rights reserved.
+        </p>
+
+      </div>
+
+    </div>
+</div>
+  </footer>
+
+
+
+<!-- footer script-->
+ <script>
+  document.querySelectorAll('.nav-title').forEach(title => {
+    title.addEventListener('click', () => {
+      title.parentElement.classList.toggle('active');
+    });
+  });
+</script>
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<!--  SCRIPT  FOR MOBILE MENU NAV -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    toggleBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("show");
+      mobileMenu.style.display = mobileMenu.classList.contains("show") ? "flex" : "none";
+    });
+  });
+</script>
+
+
+</body>
+</html>

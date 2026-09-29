@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fashion & Lifestyle - WinkelKart</title>
+
+        <!-- favicon -->
+        <link
+            rel="shortcut icon"
+            href="./assets/images/logo/Winkel_Shop__2_-removebg-preview.png"
+            type="image/x-ico"
+        />
+
+        <!-- google font link -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- font awesome-->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+
+        <!-- ionicons -->
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+
+        <style>
+            /* ================= RESET & VARIABLES ================= */
+            :root {
+                /* Theme Colors - Fashion Specific */
+                --wk-green: #43a047; /* Primary Green */
+                --wk-dark-green: #2e7d32;
+                --wk-light-green: #e8f5e9;
+                --wk-pink: #e91e63; /* Fashion Accent */
+                --wk-purple: #9c27b0; /* Luxury/Style */
+                --wk-yellow: #fdd835;
+
+                /* Text & Backgrounds */
+                --text-main: #212121;
+                --text-light: #757575;
+                --bg-body: #f9f9f9;
+                --white: #ffffff;
+            }
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: "Poppins", sans-serif;
+                background-color: var(--bg-body);
+                color: var(--text-main);
+                overflow-x: hidden;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+                transition: 0.3s;
+            }
+            ul {
+                list-style: none;
+            }
+            img {
+                max-width: 100%;
+                display: block;
+            }
+
+            .container {
+                max-width: 1350px;
+                margin: 0 auto;
+                padding: 0 15px;
+            }
+
+            /* ================= TOP BRANDING BAR ================= */
+            .top-branding {
+                background-color: var(--wk-dark-green);
+                color: white;
+                padding: 8px 0;
+                font-size: 13px;
+                font-weight: 600;
+                text-align: center;
+                letter-spacing: 1px;
+            }
+
+            /* ================= HEADER ================= */
+            header {
+                width: 100%;
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                background: white;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            }
+
+            .header-main {
+                padding: 15px 0;
+                background-color: var(--wk-green);
+            }
+
+            .header-wrapper {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .logo-text {
+                font-size: 28px;
+                font-weight: 800;
+                color: white;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+            .logo-text span {
+                color: var(--wk-yellow);
+            }
+
+            /* Search Bar */
+            .header-search-container {
+                flex: 1;
+                position: relative;
+                max-width: 600px;
+            }
+            .search-field {
+                width: 100%;
+                padding: 12px 20px;
+                border-radius: 5px;
+                border: none;
+                font-size: 14px;
+                outline: none;
+            }
+            .search-btn {
+                position: absolute;
+                right: 5px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: var(--wk-pink);
+                color: white;
+                border: none;
+                width: 35px;
+                height: 35px;
+                border-radius: 4px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .header-actions {
+                display: flex;
+                align-items: center;
+                gap: 25px;
+                color: white;
+            }
+            .sell-btn {
+                background: #1e88e5;
+                color: white;
+                padding: 8px 18px;
+                border-radius: 4px;
+                font-weight: 600;
+                font-size: 13px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+            .action-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.9);
+                cursor: pointer;
+            }
+            .action-item ion-icon {
+                font-size: 24px;
+                margin-bottom: 2px;
+            }
+
+            /* Sub Navbar */
+            .sub-navbar {
+                background: white;
+                border-bottom: 1px solid #eee;
+            }
+            .nav-list {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                padding: 12px 0;
+                flex-wrap: wrap;
+            }
+            .nav-item a {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 14px;
+                font-weight: 500;
+                color: #444;
+                padding: 5px 10px;
+                border-radius: 20px;
+            }
+            .nav-item a:hover,
+            .nav-item a.active {
+                background-color: var(--wk-light-green);
+                color: var(--wk-green);
+            }
+            .nav-icon {
+                width: 22px;
+                height: 22px;
+                object-fit: contain;
+            }
+            .menu-toggle {
+                display: none;
+                font-size: 28px;
+                color: white;
+                cursor: pointer;
+            }
+
+            /* ================= FASHION HERO BANNER ================= */
+            .fashion-hero {
+                background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+                padding: 50px 0;
+                color: white;
+                text-align: center;
+                margin-bottom: 40px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            /* Pattern overlay effect */
+            .fashion-hero::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: radial-gradient(
+                    circle,
+                    rgba(255, 255, 255, 0.1) 1px,
+                    transparent 1px
+                );
+                background-size: 20px 20px;
+                opacity: 0.5;
+            }
+
+            .hero-content {
+                position: relative;
+                z-index: 2;
+            }
+            .hero-content h1 {
+                font-size: 42px;
+                font-weight: 800;
+                margin-bottom: 10px;
+                letter-spacing: 1px;
+            }
+            .hero-content p {
+                font-size: 18px;
+                opacity: 0.9;
+                margin-bottom: 20px;
+            }
+
+            .hero-btn {
+                background: white;
+                color: var(--wk-pink);
+                padding: 12px 35px;
+                border-radius: 30px;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 14px;
+                display: inline-block;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+            .hero-btn:hover {
+                transform: translateY(-3px);
+                background: #fce4ec;
+            }
+
+            /* ================= CATEGORY CIRCLES ================= */
+            .fashion-categories {
+                display: flex;
+                justify-content: center;
+                gap: 40px;
+                margin-bottom: 50px;
+                flex-wrap: wrap;
+            }
+
+            .cat-circle {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            .cat-circle:hover {
+                transform: translateY(-5px);
+            }
+
+            .cat-img {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                background: white;
+                border: 3px solid var(--wk-light-green);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+                margin-bottom: 12px;
+                overflow: hidden;
+            }
+            .cat-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .cat-name {
+                font-weight: 700;
+                font-size: 15px;
+                color: var(--text-main);
+            }
+
+            /* ================= PRODUCTS LAYOUT (Tall Cards for Fashion) ================= */
+            .section-container {
+                max-width: 1350px;
+                margin: 0 auto 50px auto;
+                padding: 0 15px;
+            }
+
+            .section-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 25px;
+                border-bottom: 2px solid #e0e0e0;
+                padding-bottom: 10px;
+            }
+            .section-title {
+                font-size: 24px;
+                font-weight: 700;
+                color: var(--text-main);
+            }
+            .view-all {
+                color: var(--wk-pink);
+                font-weight: 600;
+                font-size: 14px;
+            }
+
+            .product-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                gap: 25px;
+            }
+
+            .product-card {
+                background: white;
+                border-radius: 12px;
+                padding: 15px;
+                border: 1px solid #eee;
+                position: relative;
+                transition: 0.3s;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            .product-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            }
+
+            .badge {
+                position: absolute;
+                top: 12px;
+                left: 12px;
+                background: var(--wk-purple);
+                color: white;
+                font-size: 10px;
+                font-weight: 700;
+                padding: 4px 10px;
+                border-radius: 4px;
+                z-index: 2;
+            }
+            .wishlist-icon {
+                position: absolute;
+                top: 12px;
+                right: 12px;
+                background: white;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                color: #ccc;
+                cursor: pointer;
+                z-index: 2;
+            }
+            .wishlist-icon:hover {
+                color: var(--wk-pink);
+            }
+
+            .product-img {
+                height: 250px; /* Taller for fashion items */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 15px;
+                overflow: hidden;
+                border-radius: 8px;
+            }
+            .product-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: 0.5s;
+            }
+            .product-card:hover .product-img img {
+                transform: scale(1.05);
+            }
+
+            .product-info {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .brand-name {
+                font-size: 11px;
+                color: var(--wk-pink);
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-bottom: 4px;
+            }
+
+            .product-info h3 {
+                font-size: 15px;
+                font-weight: 600;
+                margin-bottom: 5px;
+                color: var(--text-main);
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .price-box {
+                display: flex;
+                align-items: baseline;
+                gap: 8px;
+                margin-bottom: 12px;
+                margin-top: auto;
+            }
+            .price-curr {
+                font-size: 18px;
+                font-weight: 700;
+                color: var(--text-main);
+            }
+            .price-old {
+                font-size: 13px;
+                text-decoration: line-through;
+                color: #999;
+            }
+            .discount-text {
+                font-size: 12px;
+                color: var(--wk-green);
+                font-weight: 600;
+            }
+
+            .card-btn {
+                width: 100%;
+                padding: 10px;
+                background: white;
+                color: var(--text-main);
+                border: 1px solid #333;
+                text-align: center;
+                border-radius: 6px;
+                font-weight: 600;
+                font-size: 13px;
+                transition: 0.3s;
+            }
+            .card-btn:hover {
+                background: #333;
+                color: white;
+            }
+
+            /* ================= FOOTER ================= */
+            footer {
+                background: #263238;
+                color: #cfd8dc;
+                padding-top: 60px;
+                margin-top: 60px;
+            }
+            .footer-wrapper {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 40px;
+                padding-bottom: 40px;
+            }
+            .footer-col h3 {
+                color: white;
+                font-size: 18px;
+                margin-bottom: 20px;
+                position: relative;
+            }
+            .footer-col h3::after {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 40px;
+                height: 3px;
+                background: var(--wk-green);
+            }
+            .footer-links li {
+                margin-bottom: 12px;
+            }
+            .footer-links a {
+                color: #b0bec5;
+                font-size: 14px;
+            }
+            .footer-links a:hover {
+                color: var(--wk-green);
+                padding-left: 5px;
+            }
+            .footer-bottom {
+                background: #1c252a;
+                text-align: center;
+                padding: 20px 0;
+                border-top: 1px solid #37474f;
+                font-size: 14px;
+            }
+
+            /* Mobile */
+            @media (max-width: 900px) {
+                .header-search-container,
+                .nav-list {
+                    display: none;
+                }
+                .menu-toggle {
+                    display: block;
+                }
+                .fashion-categories {
+                    gap: 20px;
+                }
+                .cat-img {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+
+            .mobile-menu {
+                display: none;
+                background: white;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                padding: 10px 0;
+                z-index: 999;
+            }
+            .mobile-menu.show {
+                display: block;
+            }
+            .mobile-menu a {
+                display: block;
+                padding: 12px 20px;
+                border-bottom: 1px solid #f1f1f1;
+                font-weight: 500;
+                color: #444;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- HEADER -->
+        <header>
+            <div class="header-main">
+                <div class="container header-wrapper">
+                    <a href="index.html" class="logo-text"
+                        >Winkel<span>Kart</span></a
+                    >
+
+                    <div class="header-search-container">
+                        <input
+                            type="text"
+                            class="search-field"
+                            placeholder="Search for Brands, Clothing, Accessories..."
+                        />
+                        <button class="search-btn">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </button>
+                    </div>
+
+                    <div class="header-actions">
+                        <a href="register.html" class="sell-btn"
+                            >Sell Fashion</a
+                        >
+                        <a href="#" class="action-item"
+                            ><ion-icon name="heart-outline"></ion-icon
+                            ><span>Wishlist</span></a
+                        >
+                        <a href="#" class="action-item"
+                            ><ion-icon name="cart-outline"></ion-icon
+                            ><span>Cart</span></a
+                        >
+                        <a href="createacc.html" class="action-item"
+                            ><ion-icon name="person-circle-outline"></ion-icon
+                            ><span>Account</span></a
+                        >
+                        <div class="menu-toggle" id="menu-toggle">
+                            <ion-icon name="menu-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUB NAVBAR -->
+            <div class="sub-navbar">
+                <div class="container">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="computers.html"
+                                ><img
+                                    src="./assets/images/icons/dealzone.png"
+                                    class="nav-icon"
+                                />
+                                Computers</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a href="Electronics.html"
+                                ><img
+                                    src="./assets/images/icons/elec.png"
+                                    class="nav-icon"
+                                />
+                                Electronics</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a href="Mobile.html"
+                                ><img
+                                    src="./assets/images/icons/babystore.png"
+                                    class="nav-icon"
+                                />
+                                Groceries</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a href="Hotels&Resorts.html"
+                                ><img
+                                    src="./assets/images/icons/home.png"
+                                    class="nav-icon"
+                                />
+                                Hotels</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="active"
+                                ><img
+                                    src="./assets/images/icons/beauty.png"
+                                    class="nav-icon"
+                                />
+                                Fashion</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html">
+                                <img
+                                    src="./assets/images/icons/contact.png"
+                                    class="nav-icon"
+                                    alt=""
+                                />Contact Us
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mobile-menu" id="mobile-menu">
+                <a href="index.html">Home</a>
+                <a href="computers.html">Computers</a>
+                <a href="Electronics.html">Electronics</a>
+                <a href="Groceries.html">Groceries</a>
+                <a href="Hotels&Resorts.html">Hotels</a>
+                <a href="register.html">Sell</a>
+            </div>
+        </header>
+
+        <!-- FASHION HERO -->
+        <div class="fashion-hero">
+            <div class="container hero-content">
+                <h1>STYLE THAT SPEAKS</h1>
+                <p>
+                    Discover the latest trends in Men's, Women's, and Kid's
+                    wear.
+                </p>
+                <a href="#mens-wear" class="hero-btn">Explore Collection</a>
+            </div>
+        </div>
+
+        <!-- CATEGORIES -->
+        <div class="container fashion-categories">
+            <div class="cat-circle">
+                <div class="cat-img">
+                    <img
+                        src="./assets/images/products/clothes1.jpg"
+                        alt="Men"
+                        style="filter: brightness(0.9);"
+                    />
+                </div>
+                <span class="cat-name">Men</span>
+            </div>
+            <div class="cat-circle">
+                <div class="cat-img">
+                    <img
+                        src="./assets/images/products/clothes2.jpg"
+                        alt="Women"
+                        style="filter: brightness(0.9);"
+                    />
+                </div>
+                <span class="cat-name">Women</span>
+            </div>
+            <div class="cat-circle">
+                <div class="cat-img">
+                    <img
+                        src="./assets/images/products/clothes3.jpg"
+                        alt="Kids"
+                        style="filter: brightness(0.9);"
+                    />
+                </div>
+                <span class="cat-name">Kids</span>
+            </div>
+            <div class="cat-circle">
+                <div class="cat-img">
+                    <img
+                        src="./assets/images/products/shoes1.jpg"
+                        alt="Footwear"
+                        style="filter: brightness(0.9);"
+                    />
+                </div>
+                <span class="cat-name">Footwear</span>
+            </div>
+            <div class="cat-circle">
+                <div class="cat-img">
+                    <img
+                        src="./assets/images/products/watch1.jpg"
+                        alt="Watches"
+                        style="filter: brightness(0.9);"
+                    />
+                </div>
+                <span class="cat-name">Watches</span>
+            </div>
+        </div>
+
+        <!-- SECTION 1: MEN'S WEAR -->
+        <section class="section-container" id="mens-wear">
+            <div class="section-header">
+                <h3 class="section-title">
+                    <i
+                        class="fas fa-tshirt"
+                        style="color:var(--wk-blue); margin-right:10px;"
+                    ></i>
+                    Men's Collection
+                </h3>
+                <a href="#" class="view-all">View All &rarr;</a>
+            </div>
+
+            <div class="product-grid">
+                <!-- Item 1 -->
+                <div class="product-card">
+                    <span class="badge">New</span>
+                    <div class="wishlist-icon">
+                        <ion-icon name="heart"></ion-icon>
+                    </div>
+                    <div class="product-img">
+                        <img
+                            src="assets/images/products/jacket.jpg"
+                            alt="Jacket"
+                        />
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-name">Levi's</span>
+                        <h3>Denim Trucker Jacket</h3>
+                        <div class="price-box">
+                            <span class="price-curr">₹2,499</span>
+                            <span class="price-old">₹4,999</span>
+                            <span class="discount-text">(50% OFF)</span>
+                        </div>
+                        <button class="card-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="product-card">
+                    <div class="wishlist-icon">
+                        <ion-icon name="heart"></ion-icon>
+                    </div>
+                    <div class="product-img">
+                        <img
+                            src="assets/images/products/shirt.jpg"
+                            alt="Shirt"
+                        />
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-name">Roadster</span>
+                        <h3>Casual Checkered Shirt</h3>
+                        <div class="price-box">
+                            <span class="price-curr">₹899</span>
+                            <span class="price-old">₹1,499</span>
+                            <span class="discount-text">(40% OFF)</span>
+                        </div>
+                        <button class="card-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="product-card">
+                    <span class="badge" style="background:black">Premium</span>
+                    <div class="wishlist-icon">
+                        <ion-icon name="heart"></ion-icon>
+                    </div>
+                    <div class="product-img">
+                        <img
+                            src="assets/images/products/sports-1.jpg"
+                            alt="Shoes"
+                        />
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-name">Nike</span>
+                        <h3>Air Max Sneakers</h3>
+                        <div class="price-box">
+                            <span class="price-curr">₹8,999</span>
+                            <span class="price-old">₹10,999</span>
+                        </div>
+                        <button class="card-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="product-card">
+                    <div class="wishlist-icon">
+                        <ion-icon name="heart"></ion-icon>
+                    </div>
+                    <div class="product-img">
+                        <img
+                            src="assets/images/products/shorts.jpg"
+                            alt="Shorts"
+                        />
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-name">Puma</span>
+                        <h3>Cotton Cargo Shorts</h3>
+                        <div class="price-box">
+                            <span class="price-curr">₹1,200</span>
+                            <span class="price-old">₹1,999</span>
+                        </div>
+                        <button class="card-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: WOMEN'S WEAR -->
+        <section class="section-container">
+            <div class="section-header">
+                <h3 class="section-title">
+                    <i
+                        class="fas fa-female"
+                        style="color:var(--wk-pink); margin-right:10px;"
+                    ></i>
+                    Women's Trends
+                </h3>
+                <a href="#" class="view-all">View All &rarr;</a>
+            </div>
+
+            <div class="product-grid">
+                <!-- Item 1 -->
+                <div class="product-card">
+                    <span class="badge" style="background:var(--wk-pink)"
+                        >Hot</span
+                    >
+                    <div class="wishlist-icon">
+                        <ion-icon name="heart"></ion-icon>
+                    </div>
+                    <div class="product-img">
+                        <img
+                            src="assets/images/products/clothes2.jpg"
+                            alt="Dress"
+                        />
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-name">H&M</span>
+                        <h3>Floral Summer Dress</h3>
+                        <div class="price-box">
+                            <span class="price-curr">₹1,499</span>
+                            <span class="price-old">₹2,299</span>
+                        </div>
+                        <button class="card-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="product-card">
+                    <div class="wishlist-icon">
+                        <ion-icon name="heart"></ion-icon>
+                    </div>
+                    <div class="product-img">
+                        <img
+                            src="assets/images/products/jewellery-1.jpg"
+                            alt="Earrings"
+                        />
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-name">Zaveri Pearls</span>
+                        <h3>Gold Plated Earrings</h3>
+                        <div class="price-box">
+                            <span class="price-curr">₹450</span>
+                            <span class="price-old">₹1,500</span>
+                            <span class="discount-text">(70% OFF)</span>
+                        </div>
+                        <button class="card-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="product-card">
+                    <div class="wishlist-icon">
+                        <ion-icon name="heart"></ion-icon>
+                    </div>
+                    <div class="product-img">
+                        <img
+                            src="assets/images/products/shampoo.jpg"
+                            alt="Bag"
+                        />
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-name">Lavie</span>
+                        <h3>Textured Handbag</h3>
+                        <div class="price-box">
+                            <span class="price-curr">₹2,100</span>
+                            <span class="price-old">₹4,500</span>
+                        </div>
+                        <button class="card-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="product-card">
+                    <div class="wishlist-icon">
+                        <ion-icon name="heart"></ion-icon>
+                    </div>
+                    <div class="product-img">
+                        <img
+                            src="assets/images/products/shoe-2.jpg"
+                            alt="Heels"
+                        />
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-name">Bata</span>
+                        <h3>Classic Block Heels</h3>
+                        <div class="price-box">
+                            <span class="price-curr">₹1,899</span>
+                            <span class="price-old">₹2,499</span>
+                        </div>
+                        <button class="card-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="container footer-wrapper">
+                <div class="footer-col">
+                    <h3>WinkelKart</h3>
+                    <p style="font-size:14px; line-height:1.6; color:#b0bec5;">
+                        Your ultimate fashion destination. Shop the latest
+                        trends with confidence and style.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3>Shop</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Men's Fashion</a></li>
+                        <li><a href="#">Women's Fashion</a></li>
+                        <li><a href="#">Kid's Fashion</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Help</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:6294693931">+91 6294693931</a></li>
+                        <li>
+                            <a href="mailto:info@winkelkart.com"
+                                >info@winkelkart.com</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <p>
+                        &copy; 2026 WinkelKart. All Rights Reserved. Designed by
+                        SRD Techno.
+                    </p>
+                    <img
+                        src="./assets/images/payment.png"
+                        alt=""
+                        style="max-height:30px; margin:10px auto; opacity:0.6;"
+                    />
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            document
+                .getElementById("menu-toggle")
+                .addEventListener("click", () => {
+                    document
+                        .getElementById("mobile-menu")
+                        .classList.toggle("show");
+                });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - WinkelKart</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./assets/images/logo/Winkel_Shop__2_-removebg-preview.png" type="image/x-ico">
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- font awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  
+  <!-- ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <style>
+    /* ================= RESET & VARIABLES ================= */
+    :root {
+      --wk-green: #43a047;
+      --wk-dark-green: #2e7d32;
+      --wk-light-green: #e8f5e9;
+      --wk-yellow: #fdd835;
+      --wk-blue: #1e88e5;
+      --text-main: #212121;
+      --text-light: #757575;
+      --bg-body: #f9f9f9;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+    
+    .container {
+      max-width: 1350px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    /* ================= HEADER ================= */
+    header {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: white;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .header-main { padding: 15px 0; background-color: var(--wk-green); }
+
+    .header-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo-text {
+      font-size: 28px;
+      font-weight: 800;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .logo-text span { color: var(--wk-yellow); }
+
+    /* Search Bar */
+    .header-search-container { flex: 1; position: relative; max-width: 600px; }
+    .search-field {
+      width: 100%; padding: 12px 20px; border-radius: 5px; border: none; font-size: 14px; outline: none;
+    }
+    .search-btn {
+      position: absolute; right: 5px; top: 50%; transform: translateY(-50%);
+      background: var(--wk-blue); color: white; border: none; width: 35px; height: 35px;
+      border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    }
+
+    .header-actions { display: flex; align-items: center; gap: 25px; color: white; }
+    .sell-btn {
+      background: var(--wk-blue); color: white; padding: 8px 18px; border-radius: 4px;
+      font-weight: 600; font-size: 13px; border: 1px solid rgba(255,255,255,0.2);
+    }
+    .action-item { display: flex; flex-direction: column; align-items: center; font-size: 12px; color: rgba(255,255,255,0.9); }
+    .action-item ion-icon { font-size: 24px; margin-bottom: 2px; }
+
+    /* Sub Navbar */
+    .sub-navbar { background: white; border-bottom: 1px solid #eee; }
+    .nav-list { display: flex; justify-content: center; gap: 30px; padding: 12px 0; flex-wrap: wrap; }
+    .nav-item a {
+      display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500;
+      color: #444; padding: 5px 10px; border-radius: 20px;
+    }
+    .nav-item a:hover, .nav-item a.active { background-color: var(--wk-light-green); color: var(--wk-green); }
+    .nav-icon { width: 22px; height: 22px; object-fit: contain; }
+    .menu-toggle { display: none; font-size: 28px; color: white; cursor: pointer; }
+
+    /* ================= CONTACT HERO ================= */
+    .contact-hero {
+      background: linear-gradient(135deg, var(--wk-dark-green) 0%, var(--wk-green) 100%);
+      padding: 60px 0 100px; /* Extra bottom padding for overlap */
+      text-align: center;
+      color: white;
+    }
+    .contact-hero h1 { font-size: 36px; font-weight: 800; margin-bottom: 10px; }
+    .contact-hero p { font-size: 16px; opacity: 0.9; }
+
+    /* ================= CONTACT CONTENT WRAPPER ================= */
+    .contact-wrapper {
+      max-width: 1100px;
+      margin: -60px auto 50px; /* Negative margin to overlap hero */
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Left Side: Info */
+    .contact-info {
+      flex: 1;
+      background: var(--wk-blue);
+      color: white;
+      padding: 50px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .info-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 30px; }
+    .info-item ion-icon { font-size: 24px; background: rgba(255,255,255,0.2); padding: 10px; border-radius: 50%; }
+    .info-item h4 { font-size: 18px; margin-bottom: 5px; }
+    .info-item p { font-size: 14px; opacity: 0.9; line-height: 1.6; }
+
+    .social-icons { display: flex; gap: 15px; margin-top: 20px; }
+    .social-icons a { 
+      width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.3); 
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      transition: 0.3s;
+    }
+    .social-icons a:hover { background: white; color: var(--wk-blue); }
+
+    /* Right Side: Form */
+    .contact-form {
+      flex: 1.5;
+      padding: 50px 40px;
+    }
+
+    .contact-form h2 { color: var(--wk-green); margin-bottom: 30px; font-size: 24px; }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 600; color: #555; }
+    
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .form-control:focus { border-color: var(--wk-green); outline: none; box-shadow: 0 0 0 3px rgba(67, 160, 71, 0.1); }
+
+    .submit-btn {
+      background: var(--wk-green);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover { background: var(--wk-dark-green); transform: translateY(-2px); }
+
+    /* ================= FOOTER ================= */
+    footer { background: #263238; color: #cfd8dc; padding-top: 60px; margin-top: 60px; }
+    .footer-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; padding-bottom: 40px; }
+    .footer-col h3 { color: white; font-size: 18px; margin-bottom: 20px; position: relative; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { color: #b0bec5; font-size: 14px; }
+    .footer-bottom { background: #1c252a; text-align: center; padding: 20px 0; border-top: 1px solid #37474f; font-size: 14px; }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .header-search-container, .nav-list { display: none; }
+      .menu-toggle { display: block; }
+      .contact-wrapper { flex-direction: column; margin: 20px; width: auto; }
+      .contact-info, .contact-form { padding: 30px 20px; }
+    }
+
+    .mobile-menu {
+      display: none; background: white; position: absolute; top: 100%; left: 0; width: 100%;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1); padding: 10px 0; z-index: 999;
+    }
+    .mobile-menu.show { display: block; }
+    .mobile-menu a { display: block; padding: 12px 20px; border-bottom: 1px solid #f1f1f1; color: #444; }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-main">
+      <div class="container header-wrapper">
+        <a href="index.html" class="logo-text">Winkel<span>Kart</span></a>
+        
+        <div class="header-search-container">
+          <input type="text" class="search-field" placeholder="Search...">
+          <button class="search-btn"><ion-icon name="search-outline"></ion-icon></button>
+        </div>
+
+        <div class="header-actions">
+          <a href="register.html" class="sell-btn">Sell With Us</a>
+          <a href="#" class="action-item"><ion-icon name="heart-outline"></ion-icon><span>Wishlist</span></a>
+          <a href="#" class="action-item"><ion-icon name="cart-outline"></ion-icon><span>Cart</span></a>
+          <div class="menu-toggle" id="menu-toggle"><ion-icon name="menu-outline"></ion-icon></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUB NAVBAR -->
+    <div class="sub-navbar">
+      <div class="container">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="computers.html"><img src="./assets/images/icons/dealzone.png" class="nav-icon"> Computers</a></li>
+          <li class="nav-item"><a href="Electronics.html"><img src="./assets/images/icons/elec.png" class="nav-icon"> Electronics</a></li>
+          <li class="nav-item"><a href="Mobile.html"><img src="./assets/images/icons/babystore.png" class="nav-icon"> Groceries</a></li>
+          <li class="nav-item"><a href="Hotels&Resorts.html"><img src="./assets/images/icons/home.png" class="nav-icon"> Hotels</a></li>
+          <li class="nav-item"><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="computers.html">Computers</a>
+      <a href="Electronics.html">Electronics</a>
+      <a href="Mobile.html">Groceries</a>
+      <a href="Hotels&Resorts.html">Hotels</a>
+      <a href="register.html">Sell</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <div class="contact-hero">
+    <div class="container">
+      <h1>Get in Touch</h1>
+      <p>Have questions? We'd love to hear from you.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT WRAPPER -->
+  <div class="contact-wrapper">
+    
+    <!-- Left Side: Contact Info -->
+    <div class="contact-info">
+      <div>
+        <h3 style="font-size:24px; margin-bottom:30px;">Contact Information</h3>
+        
+        <div class="info-item">
+          <ion-icon name="location"></ion-icon>
+          <div>
+            <h4>Headquarters</h4>
+            <p>SRD Technologies India<br>Kulsum Complex, Station More,<br>Bagdogra, West Bengal - 734014</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <ion-icon name="call"></ion-icon>
+          <div>
+            <h4>Phone Number</h4>
+            <p>+91 6294693931</p>
+            <p>1800-WINKEL-HELP</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <ion-icon name="mail"></ion-icon>
+          <div>
+            <h4>Email Address</h4>
+            <p>info@winkelkart.com</p>
+            <p>support@winkelkart.com</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p style="margin-bottom:15px;">Follow us:</p>
+        <div class="social-icons">
+          <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side: Form -->
+    <div class="contact-form">
+      <h2>Send us a Message</h2>
+      <form action="/send-email" method="POST">
+        
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" name="business_name" class="form-control" placeholder="John Doe" required>
+        </div>
+
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" class="form-control" placeholder="john@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="text" name="contact_person" class="form-control" placeholder="+91 98765 43210" required>
+        </div>
+
+        <div class="form-group">
+          <label>Address</label>
+          <input type="text" name="address" class="form-control" placeholder="Street, City, Zip" required>
+        </div>
+
+        <div class="form-group">
+          <label>State</label>
+          <select name="State_Type" class="form-control">
+             <option value="West Bengal" selected>West Bengal</option>
+             <option value="Delhi">Delhi</option>
+             <option value="Maharashtra">Maharashtra</option>
+             <option value="Karnataka">Karnataka</option>
+             <option value="Tamil Nadu">Tamil Nadu</option>
+             <option value="Uttar Pradesh">Uttar Pradesh</option>
+             <option value="Bihar">Bihar</option>
+             <option value="Gujarat">Gujarat</option>
+             <!-- Add other states as needed -->
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Country</label>
+          <select name="Country_Type" class="form-control">
+             <option value="India" selected>India</option>
+             <option value="USA">United States</option>
+             <option value="UK">United Kingdom</option>
+             <option value="Canada">Canada</option>
+             <option value="Australia">Australia</option>
+             <option value="UAE">UAE</option>
+          </select>
+        </div>
+
+        <input type="submit" value="Send Message" class="submit-btn">
+      </form>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-wrapper">
+      <div class="footer-col">
+        <h3>WinkelKart</h3>
+        <p style="font-size:14px; line-height:1.6; color:#b0bec5;">
+          India's most trusted online shopping destination. From high-end electronics to fresh groceries and luxury stays.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h3>Categories</h3>
+        <ul class="footer-links">
+          <li><a href="computers.html">Computers</a></li>
+          <li><a href="Electronics.html">Electronics</a></li>
+          <li><a href="Mobile.html">Groceries</a></li>
+          <li><a href="Hotels&Resorts.html">Hotels</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>For Business</h3>
+        <ul class="footer-links">
+          <li><a href="register.html">Sell on WinkelKart</a></li>
+          <li><a href="#">GST Compliance</a></li>
+          <li><a href="#">Vendor Login</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li><a href="tel:6294693931">+91 6294693931</a></li>
+          <li><a href="mailto:info@winkelkart.com">info@winkelkart.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 WinkelKart. All Rights Reserved. Designed by SRD Techno.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("menu-toggle").addEventListener("click", () => {
+      document.getElementById("mobile-menu").classList.toggle("show");
+    });
+  </script>
+
+</body>
+</html>
